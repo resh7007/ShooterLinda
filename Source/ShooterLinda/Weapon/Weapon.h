@@ -25,7 +25,7 @@ class SHOOTERLINDA_API AWeapon : public AActor
 public:	 
 	AWeapon();
 	virtual void Tick(float DeltaTime) override;
-
+	void ShowPickupWidget(bool bShowWidget);
 protected: 
 	virtual void BeginPlay() override;
 	UFUNCTION()
@@ -58,4 +58,5 @@ private:
 	class UWidgetComponent* PickupWidget;
 public:	 
 
+	FORCEINLINE void SetWeaponState(EWeaponState State) {WeaponState = State;}
 };

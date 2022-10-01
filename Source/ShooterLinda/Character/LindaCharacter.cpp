@@ -5,7 +5,8 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
-
+#include "ShooterLinda/LindaComponents/CombatComponent.h"
+#include "ShooterLinda/Weapon/Weapon.h"
 
 ALindaCharacter::ALindaCharacter()
 { 
@@ -21,6 +22,9 @@ ALindaCharacter::ALindaCharacter()
 
 	bUseControllerRotationYaw = false;
 	GetCharacterMovement()->bOrientRotationToMovement = true;
+
+	Combat = CreateDefaultSubobject<UCombatComponent>(TEXT("CombatComponent"));
+	
 }
  
 void ALindaCharacter::BeginPlay()
@@ -36,10 +40,18 @@ void ALindaCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 	PlayerInputComponent->BindAxis("MoveRight", this, &ALindaCharacter::MoveRight);
 	PlayerInputComponent->BindAxis("Turn", this, &ALindaCharacter::Turn);
 	PlayerInputComponent->BindAxis("LookUp", this, &ALindaCharacter::LookUp);
-
-
-
+	PlayerInputComponent->BindAction("Equip",IE_Pressed, this, &ALindaCharacter::EquipButtonPressed);
 }
+
+void ALindaCharacter::PostInitializeComponents() 
+{
+	Super::PostInitializeComponents();
+	if(Combat)
+	{
+		Combat->Character = this;
+	}
+}
+
 
 void ALindaCharacter::MoveForward(float Value)
 {
@@ -68,12 +80,27 @@ void ALindaCharacter::LookUp(float Value)
 	AddControllerPitchInput(Value);
 }
 
+void ALindaCharacter::EquipButtonPressed()
+{
+	if(Combat)
+	{
+		Combat->EquipWeapon(OverlappingWeapon);
+	}
+
+}
  
+void ALindaCharacter::SetOverlappingWeapon(AWeapon* Weapon)
+{
+	if (OverlappingWeapon)
+	{
+		OverlappingWeapon->ShowPickupWidget(false);
+	}
+	OverlappingWeapon = Weapon;
+	 
+}
 void ALindaCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
 }
- 
-
 

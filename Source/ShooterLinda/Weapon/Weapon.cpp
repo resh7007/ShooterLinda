@@ -10,7 +10,7 @@ AWeapon::AWeapon()
 { 
 	PrimaryActorTick.bCanEverTick = false;
 	WeaponMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("WeaponMesh"));
-	 WeaponMesh->SetupAttachment(RootComponent);
+	WeaponMesh->SetupAttachment(RootComponent);
 	SetRootComponent(WeaponMesh);
 
 	WeaponMesh->SetCollisionResponseToAllChannels(ECollisionResponse::ECR_Block);
@@ -55,6 +55,7 @@ void AWeapon::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent,AActor* O
 	if(LindaCharacter && PickupWidget)
 	{
 		PickupWidget->SetVisibility(true);
+		LindaCharacter->SetOverlappingWeapon(this);
 	}
 } 
 
@@ -62,7 +63,16 @@ void AWeapon::OnSphereEndOverlap(UPrimitiveComponent* OverlappedComponent,AActor
 {
 	ALindaCharacter* LindaCharacter = Cast<ALindaCharacter> (OtherActor);
 	if(LindaCharacter && PickupWidget)
-	{
-		PickupWidget->SetVisibility(false);
+	{ 
+		LindaCharacter->SetOverlappingWeapon(nullptr);
+
 	}
 } 
+
+void AWeapon::ShowPickupWidget(bool bShowWidget)
+{
+	if (PickupWidget)
+	{
+		PickupWidget->SetVisibility(bShowWidget);
+	}
+}
