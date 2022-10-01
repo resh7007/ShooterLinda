@@ -19,7 +19,7 @@ void AEnemies::BeginPlay()
 void AEnemies::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-MoveForward(1);
+	MoveForward(1);
 }
  
 void AEnemies::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
