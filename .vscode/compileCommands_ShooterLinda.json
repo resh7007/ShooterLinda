@@ -1,0 +1,107 @@
+[
+	{
+		"file": "/Users/raushanmac/ShooterLinda/Source/ShooterLinda/Character/LindaAnimInstance.cpp",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @/Users/raushanmac/ShooterLinda/.vscode/compileCommands_ShooterLinda/ShooterLinda.204.rsp",
+		"directory": "/Users/Shared/Epic Games/UE_5.0/Engine/Source"
+	},
+	{
+		"file": "/Users/raushanmac/ShooterLinda/Source/ShooterLinda/Character/LindaAnimInstance.h",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @/Users/raushanmac/ShooterLinda/.vscode/compileCommands_ShooterLinda/ShooterLinda.204.rsp",
+		"directory": "/Users/Shared/Epic Games/UE_5.0/Engine/Source"
+	},
+	{
+		"file": "/Users/raushanmac/ShooterLinda/Source/ShooterLinda/Character/LindaCharacter.cpp",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @/Users/raushanmac/ShooterLinda/.vscode/compileCommands_ShooterLinda/ShooterLinda.204.rsp",
+		"directory": "/Users/Shared/Epic Games/UE_5.0/Engine/Source"
+	},
+	{
+		"file": "/Users/raushanmac/ShooterLinda/Source/ShooterLinda/Character/LindaCharacter.h",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @/Users/raushanmac/ShooterLinda/.vscode/compileCommands_ShooterLinda/ShooterLinda.204.rsp",
+		"directory": "/Users/Shared/Epic Games/UE_5.0/Engine/Source"
+	},
+	{
+		"file": "/Users/raushanmac/ShooterLinda/Source/ShooterLinda/Enemies/Enemies.cpp",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @/Users/raushanmac/ShooterLinda/.vscode/compileCommands_ShooterLinda/ShooterLinda.204.rsp",
+		"directory": "/Users/Shared/Epic Games/UE_5.0/Engine/Source"
+	},
+	{
+		"file": "/Users/raushanmac/ShooterLinda/Source/ShooterLinda/Enemies/Enemies.h",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @/Users/raushanmac/ShooterLinda/.vscode/compileCommands_ShooterLinda/ShooterLinda.204.rsp",
+		"directory": "/Users/Shared/Epic Games/UE_5.0/Engine/Source"
+	},
+	{
+		"file": "/Users/raushanmac/ShooterLinda/Source/ShooterLinda/Enemies/Ninja.cpp",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @/Users/raushanmac/ShooterLinda/.vscode/compileCommands_ShooterLinda/ShooterLinda.204.rsp",
+		"directory": "/Users/Shared/Epic Games/UE_5.0/Engine/Source"
+	},
+	{
+		"file": "/Users/raushanmac/ShooterLinda/Source/ShooterLinda/Enemies/Ninja.h",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @/Users/raushanmac/ShooterLinda/.vscode/compileCommands_ShooterLinda/ShooterLinda.204.rsp",
+		"directory": "/Users/Shared/Epic Games/UE_5.0/Engine/Source"
+	},
+	{
+		"file": "/Users/raushanmac/ShooterLinda/Source/ShooterLinda/Enemies/Soldier.cpp",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @/Users/raushanmac/ShooterLinda/.vscode/compileCommands_ShooterLinda/ShooterLinda.204.rsp",
+		"directory": "/Users/Shared/Epic Games/UE_5.0/Engine/Source"
+	},
+	{
+		"file": "/Users/raushanmac/ShooterLinda/Source/ShooterLinda/Enemies/Soldier.h",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @/Users/raushanmac/ShooterLinda/.vscode/compileCommands_ShooterLinda/ShooterLinda.204.rsp",
+		"directory": "/Users/Shared/Epic Games/UE_5.0/Engine/Source"
+	},
+	{
+		"file": "/Users/raushanmac/ShooterLinda/Source/ShooterLinda/HUD/OverHeadUserWidget.cpp",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @/Users/raushanmac/ShooterLinda/.vscode/compileCommands_ShooterLinda/ShooterLinda.204.rsp",
+		"directory": "/Users/Shared/Epic Games/UE_5.0/Engine/Source"
+	},
+	{
+		"file": "/Users/raushanmac/ShooterLinda/Source/ShooterLinda/HUD/OverHeadUserWidget.h",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @/Users/raushanmac/ShooterLinda/.vscode/compileCommands_ShooterLinda/ShooterLinda.204.rsp",
+		"directory": "/Users/Shared/Epic Games/UE_5.0/Engine/Source"
+	},
+	{
+		"file": "/Users/raushanmac/ShooterLinda/Source/ShooterLinda/LindaComponents/CombatComponent.cpp",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @/Users/raushanmac/ShooterLinda/.vscode/compileCommands_ShooterLinda/ShooterLinda.204.rsp",
+		"directory": "/Users/Shared/Epic Games/UE_5.0/Engine/Source"
+	},
+	{
+		"file": "/Users/raushanmac/ShooterLinda/Source/ShooterLinda/LindaComponents/CombatComponent.h",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @/Users/raushanmac/ShooterLinda/.vscode/compileCommands_ShooterLinda/ShooterLinda.204.rsp",
+		"directory": "/Users/Shared/Epic Games/UE_5.0/Engine/Source"
+	},
+	{
+		"file": "/Users/raushanmac/ShooterLinda/Source/ShooterLinda/ShooterLinda.Build.cs",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @/Users/raushanmac/ShooterLinda/.vscode/compileCommands_ShooterLinda/ShooterLinda.204.rsp",
+		"directory": "/Users/Shared/Epic Games/UE_5.0/Engine/Source"
+	},
+	{
+		"file": "/Users/raushanmac/ShooterLinda/Source/ShooterLinda/ShooterLinda.cpp",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @/Users/raushanmac/ShooterLinda/.vscode/compileCommands_ShooterLinda/ShooterLinda.204.rsp",
+		"directory": "/Users/Shared/Epic Games/UE_5.0/Engine/Source"
+	},
+	{
+		"file": "/Users/raushanmac/ShooterLinda/Source/ShooterLinda/ShooterLinda.h",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @/Users/raushanmac/ShooterLinda/.vscode/compileCommands_ShooterLinda/ShooterLinda.204.rsp",
+		"directory": "/Users/Shared/Epic Games/UE_5.0/Engine/Source"
+	},
+	{
+		"file": "/Users/raushanmac/ShooterLinda/Source/ShooterLinda/ShooterLindaGameModeBase.cpp",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @/Users/raushanmac/ShooterLinda/.vscode/compileCommands_ShooterLinda/ShooterLinda.204.rsp",
+		"directory": "/Users/Shared/Epic Games/UE_5.0/Engine/Source"
+	},
+	{
+		"file": "/Users/raushanmac/ShooterLinda/Source/ShooterLinda/ShooterLindaGameModeBase.h",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @/Users/raushanmac/ShooterLinda/.vscode/compileCommands_ShooterLinda/ShooterLinda.204.rsp",
+		"directory": "/Users/Shared/Epic Games/UE_5.0/Engine/Source"
+	},
+	{
+		"file": "/Users/raushanmac/ShooterLinda/Source/ShooterLinda/Weapon/Weapon.cpp",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @/Users/raushanmac/ShooterLinda/.vscode/compileCommands_ShooterLinda/ShooterLinda.204.rsp",
+		"directory": "/Users/Shared/Epic Games/UE_5.0/Engine/Source"
+	},
+	{
+		"file": "/Users/raushanmac/ShooterLinda/Source/ShooterLinda/Weapon/Weapon.h",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @/Users/raushanmac/ShooterLinda/.vscode/compileCommands_ShooterLinda/ShooterLinda.204.rsp",
+		"directory": "/Users/Shared/Epic Games/UE_5.0/Engine/Source"
+	}
+]

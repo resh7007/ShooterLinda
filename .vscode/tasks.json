@@ -1,0 +1,720 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "ShooterLinda Mac Debug Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLinda",
+				"Mac",
+				"Debug",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLinda Mac Debug Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLinda",
+				"Mac",
+				"Debug",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"ShooterLinda Mac Debug Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLinda Mac Debug Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLinda",
+				"Mac",
+				"Debug",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLinda Mac DebugGame Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLinda",
+				"Mac",
+				"DebugGame",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLinda Mac DebugGame Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLinda",
+				"Mac",
+				"DebugGame",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"ShooterLinda Mac DebugGame Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLinda Mac DebugGame Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLinda",
+				"Mac",
+				"DebugGame",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLinda Mac Development Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLinda",
+				"Mac",
+				"Development",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLinda Mac Development Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLinda",
+				"Mac",
+				"Development",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"ShooterLinda Mac Development Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLinda Mac Development Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLinda",
+				"Mac",
+				"Development",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLinda Mac Test Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLinda",
+				"Mac",
+				"Test",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLinda Mac Test Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLinda",
+				"Mac",
+				"Test",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"ShooterLinda Mac Test Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLinda Mac Test Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLinda",
+				"Mac",
+				"Test",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLinda Mac Shipping Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLinda",
+				"Mac",
+				"Shipping",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLinda Mac Shipping Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLinda",
+				"Mac",
+				"Shipping",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"ShooterLinda Mac Shipping Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLinda Mac Shipping Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLinda",
+				"Mac",
+				"Shipping",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLinda IOS Debug Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLinda",
+				"IOS",
+				"Debug",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLinda IOS Debug Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLinda",
+				"IOS",
+				"Debug",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"ShooterLinda IOS Debug Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLinda IOS Debug Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLinda",
+				"IOS",
+				"Debug",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLinda IOS DebugGame Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLinda",
+				"IOS",
+				"DebugGame",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLinda IOS DebugGame Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLinda",
+				"IOS",
+				"DebugGame",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"ShooterLinda IOS DebugGame Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLinda IOS DebugGame Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLinda",
+				"IOS",
+				"DebugGame",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLinda IOS Development Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLinda",
+				"IOS",
+				"Development",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLinda IOS Development Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLinda",
+				"IOS",
+				"Development",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"ShooterLinda IOS Development Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLinda IOS Development Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLinda",
+				"IOS",
+				"Development",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLinda IOS Test Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLinda",
+				"IOS",
+				"Test",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLinda IOS Test Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLinda",
+				"IOS",
+				"Test",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"ShooterLinda IOS Test Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLinda IOS Test Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLinda",
+				"IOS",
+				"Test",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLinda IOS Shipping Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLinda",
+				"IOS",
+				"Shipping",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLinda IOS Shipping Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLinda",
+				"IOS",
+				"Shipping",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"ShooterLinda IOS Shipping Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLinda IOS Shipping Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLinda",
+				"IOS",
+				"Shipping",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLindaEditor Mac Debug Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLindaEditor",
+				"Mac",
+				"Debug",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLindaEditor Mac Debug Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLindaEditor",
+				"Mac",
+				"Debug",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"ShooterLindaEditor Mac Debug Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLindaEditor Mac Debug Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLindaEditor",
+				"Mac",
+				"Debug",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLindaEditor Mac DebugGame Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLindaEditor",
+				"Mac",
+				"DebugGame",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLindaEditor Mac DebugGame Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLindaEditor",
+				"Mac",
+				"DebugGame",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"ShooterLindaEditor Mac DebugGame Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLindaEditor Mac DebugGame Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLindaEditor",
+				"Mac",
+				"DebugGame",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLindaEditor Mac Development Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLindaEditor",
+				"Mac",
+				"Development",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLindaEditor Mac Development Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLindaEditor",
+				"Mac",
+				"Development",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"ShooterLindaEditor Mac Development Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		},
+		{
+			"label": "ShooterLindaEditor Mac Development Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"ShooterLindaEditor",
+				"Mac",
+				"Development",
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_5.0"
+			}
+		}
+	]
+}

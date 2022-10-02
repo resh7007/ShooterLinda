@@ -1,0 +1,105 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Launch ShooterLinda (Debug)",
+			"request": "launch",
+			"program": "/Users/raushanmac/ShooterLinda/Binaries/Mac/UnrealGame-Mac-Debug.app/Contents/MacOS/UnrealGame-Mac-Debug",
+			"preLaunchTask": "ShooterLinda Mac Debug Build",
+			"args": [
+			],
+			"cwd": "/Users/Shared/Epic Games/UE_5.0",
+			"type": "lldb"
+		},
+		{
+			"name": "Launch ShooterLinda (DebugGame)",
+			"request": "launch",
+			"program": "/Users/raushanmac/ShooterLinda/Binaries/Mac/UnrealGame-Mac-DebugGame.app/Contents/MacOS/UnrealGame-Mac-DebugGame",
+			"preLaunchTask": "ShooterLinda Mac DebugGame Build",
+			"args": [
+			],
+			"cwd": "/Users/Shared/Epic Games/UE_5.0",
+			"type": "lldb"
+		},
+		{
+			"name": "Launch ShooterLinda (Development)",
+			"request": "launch",
+			"program": "/Users/raushanmac/ShooterLinda/Binaries/Mac/UnrealGame.app/Contents/MacOS/UnrealGame",
+			"preLaunchTask": "ShooterLinda Mac Development Build",
+			"args": [
+			],
+			"cwd": "/Users/Shared/Epic Games/UE_5.0",
+			"type": "lldb"
+		},
+		{
+			"name": "Launch ShooterLinda (Test)",
+			"request": "launch",
+			"program": "/Users/raushanmac/ShooterLinda/Binaries/Mac/UnrealGame-Mac-Test.app/Contents/MacOS/UnrealGame-Mac-Test",
+			"preLaunchTask": "ShooterLinda Mac Test Build",
+			"args": [
+			],
+			"cwd": "/Users/Shared/Epic Games/UE_5.0",
+			"type": "lldb"
+		},
+		{
+			"name": "Launch ShooterLinda (Shipping)",
+			"request": "launch",
+			"program": "/Users/raushanmac/ShooterLinda/Binaries/Mac/UnrealGame-Mac-Shipping.app/Contents/MacOS/UnrealGame-Mac-Shipping",
+			"preLaunchTask": "ShooterLinda Mac Shipping Build",
+			"args": [
+			],
+			"cwd": "/Users/Shared/Epic Games/UE_5.0",
+			"type": "lldb"
+		},
+		{
+			"name": "Launch ShooterLindaEditor (Debug)",
+			"request": "launch",
+			"program": "/Users/Shared/Epic Games/UE_5.0/Engine/Binaries/Mac/UnrealEditor-Mac-Debug.app/Contents/MacOS/UnrealEditor-Mac-Debug",
+			"preLaunchTask": "ShooterLindaEditor Mac Debug Build",
+			"args": [
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject"
+			],
+			"cwd": "/Users/Shared/Epic Games/UE_5.0",
+			"type": "lldb"
+		},
+		{
+			"name": "Launch ShooterLindaEditor (DebugGame)",
+			"request": "launch",
+			"program": "/Users/Shared/Epic Games/UE_5.0/Engine/Binaries/Mac/UnrealEditor-Mac-DebugGame.app/Contents/MacOS/UnrealEditor-Mac-DebugGame",
+			"preLaunchTask": "ShooterLindaEditor Mac DebugGame Build",
+			"args": [
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject"
+			],
+			"cwd": "/Users/Shared/Epic Games/UE_5.0",
+			"type": "lldb"
+		},
+		{
+			"name": "Launch ShooterLindaEditor (Development)",
+			"request": "launch",
+			"program": "/Users/Shared/Epic Games/UE_5.0/Engine/Binaries/Mac/UnrealEditor.app/Contents/MacOS/UnrealEditor",
+			"preLaunchTask": "ShooterLindaEditor Mac Development Build",
+			"args": [
+				"/Users/raushanmac/ShooterLinda/ShooterLinda.uproject"
+			],
+			"cwd": "/Users/Shared/Epic Games/UE_5.0",
+			"type": "lldb"
+		},
+		{
+			"name": "Generate Project Files",
+			"type": "coreclr",
+			"request": "launch",
+			"program": "/Users/Shared/Epic Games/UE_5.0/Engine/Binaries/DotNET/UnrealBuildTool/UnrealBuildTool",
+			"args": [
+				"-projectfiles",
+				"-vscode",
+				"-project=/Users/raushanmac/ShooterLinda/ShooterLinda.uproject",
+				"-game",
+				"-engine"
+			],
+			"console": "internalConsole",
+			"internalConsoleOptions": "openOnSessionStart",
+			"stopAtEntry": false,
+			"cwd": "/Users/Shared/Epic Games/UE_5.0"
+		}
+	]
+}

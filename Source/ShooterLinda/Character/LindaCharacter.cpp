@@ -37,10 +37,7 @@ void ALindaCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAxis("MoveForward", this, &ALindaCharacter::MoveForward);
-	PlayerInputComponent->BindAxis("MoveRight", this, &ALindaCharacter::MoveRight);
-	PlayerInputComponent->BindAxis("Turn", this, &ALindaCharacter::Turn);
-	PlayerInputComponent->BindAxis("LookUp", this, &ALindaCharacter::LookUp);
-	PlayerInputComponent->BindAction("Equip",IE_Pressed, this, &ALindaCharacter::EquipButtonPressed);
+	PlayerInputComponent->BindAxis("MoveRight", this, &ALindaCharacter::MoveRight); 
 }
 
 void ALindaCharacter::PostInitializeComponents() 
@@ -80,7 +77,7 @@ void ALindaCharacter::LookUp(float Value)
 	AddControllerPitchInput(Value);
 }
 
-void ALindaCharacter::EquipButtonPressed()
+void ALindaCharacter::EquipWeapon()
 {
 	if(Combat)
 	{
@@ -91,17 +88,18 @@ void ALindaCharacter::EquipButtonPressed()
  
 void ALindaCharacter::SetOverlappingWeapon(AWeapon* Weapon)
 {
-	if (OverlappingWeapon)
-	{
-		OverlappingWeapon->ShowPickupWidget(false);
-	}
+	UE_LOG(LogTemp, Warning, TEXT("overlapped"));
+
+	 
 	OverlappingWeapon = Weapon;
+	EquipWeapon();
+ 
 	 
 }
 void ALindaCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	MoveForward(1);
+	//MoveForward(1);
 
 }
 

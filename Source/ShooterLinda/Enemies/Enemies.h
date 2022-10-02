@@ -13,12 +13,15 @@ class SHOOTERLINDA_API AEnemies : public ACharacter
 
 public: 
 	AEnemies();
-
+	
 protected: 
 	virtual void BeginPlay() override;
 
 	void MoveForward(float Value);
 	void MoveRight(float Value);
+private:
+	int GetDirection();
+	int Dir=-1;
 public:	 
 	virtual void Tick(float DeltaTime) override;
  
