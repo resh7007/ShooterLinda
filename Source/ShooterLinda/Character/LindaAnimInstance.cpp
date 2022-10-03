@@ -23,7 +23,8 @@ void ULindaAnimInstance::NativeUpdateAnimation(float DeltaTime)
 
     FVector Velocity = LindaCharacter->GetVelocity();
     Velocity.Z = 0.f;
-    Speed = Velocity.Size();
+    Speed =  Velocity.Size();
+ 
 
     bIsInAir = LindaCharacter->GetCharacterMovement()->IsFalling();
     bIsAccelerating = LindaCharacter->GetCharacterMovement()->GetCurrentAcceleration().Size() > 0.f ? true : false;

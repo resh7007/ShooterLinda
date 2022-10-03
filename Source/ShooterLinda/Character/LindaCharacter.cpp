@@ -38,6 +38,7 @@ void ALindaCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAxis("MoveForward", this, &ALindaCharacter::MoveForward);
 	PlayerInputComponent->BindAxis("MoveRight", this, &ALindaCharacter::MoveRight); 
+	PlayerInputComponent->BindAxis("Turn", this, &ALindaCharacter::Turn); 
 }
 
 void ALindaCharacter::PostInitializeComponents() 
@@ -99,7 +100,7 @@ void ALindaCharacter::SetOverlappingWeapon(AWeapon* Weapon)
 void ALindaCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	//MoveForward(1);
+	MoveForward(1);
 
 }
 
