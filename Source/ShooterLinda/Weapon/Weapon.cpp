@@ -5,8 +5,9 @@
 #include "Components/SphereComponent.h"
 #include "Components/WidgetComponent.h"
 #include "ShooterLinda/Character/LindaCharacter.h"
+#include "Animation/AnimationAsset.h"
 #include "ShooterLinda/Enemies/Enemies.h"
-
+#include "Components/SkeletalMeshComponent.h"
 AWeapon::AWeapon()
 { 
 	PrimaryActorTick.bCanEverTick = false;
@@ -59,4 +60,11 @@ void AWeapon::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent,AActor* O
 	} 
 } 
 
+void AWeapon::Fire()
+{
+	if(FireAnimation)
+	{
+		WeaponMesh->PlayAnimation(FireAnimation,false);
+	}
+}
  

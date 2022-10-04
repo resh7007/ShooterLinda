@@ -49,6 +49,7 @@ void UCombatComponent::EquipWeapon(class AWeapon* WeaponToEquip)
 void UCombatComponent::FireButtonPressed(bool bPressed)
 {
 	bFireButtonPressed = bPressed;
- 
+	if(EquippedWeapon == nullptr) return;
+	EquippedWeapon->Fire();
 
 }
