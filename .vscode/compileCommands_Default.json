@@ -115,6 +115,26 @@
 		"directory": "/Users/Shared/Epic Games/UE_5.0/Engine/Source"
 	},
 	{
+		"file": "/Users/raushanmac/ShooterLinda/Source/ShooterLinda/Weapon/Projectile.cpp",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @/Users/raushanmac/ShooterLinda/.vscode/compileCommands_Default/ShooterLinda.204.rsp",
+		"directory": "/Users/Shared/Epic Games/UE_5.0/Engine/Source"
+	},
+	{
+		"file": "/Users/raushanmac/ShooterLinda/Source/ShooterLinda/Weapon/Projectile.h",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @/Users/raushanmac/ShooterLinda/.vscode/compileCommands_Default/ShooterLinda.204.rsp",
+		"directory": "/Users/Shared/Epic Games/UE_5.0/Engine/Source"
+	},
+	{
+		"file": "/Users/raushanmac/ShooterLinda/Source/ShooterLinda/Weapon/ProjectileWeapon.cpp",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @/Users/raushanmac/ShooterLinda/.vscode/compileCommands_Default/ShooterLinda.204.rsp",
+		"directory": "/Users/Shared/Epic Games/UE_5.0/Engine/Source"
+	},
+	{
+		"file": "/Users/raushanmac/ShooterLinda/Source/ShooterLinda/Weapon/ProjectileWeapon.h",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @/Users/raushanmac/ShooterLinda/.vscode/compileCommands_Default/ShooterLinda.204.rsp",
+		"directory": "/Users/Shared/Epic Games/UE_5.0/Engine/Source"
+	},
+	{
 		"file": "/Users/raushanmac/ShooterLinda/Source/ShooterLinda/Weapon/Weapon.cpp",
 		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @/Users/raushanmac/ShooterLinda/.vscode/compileCommands_Default/ShooterLinda.204.rsp",
 		"directory": "/Users/Shared/Epic Games/UE_5.0/Engine/Source"

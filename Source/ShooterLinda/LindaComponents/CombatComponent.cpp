@@ -44,3 +44,11 @@ void UCombatComponent::EquipWeapon(class AWeapon* WeaponToEquip)
 
 	EquippedWeapon->SetOwner(Character); 
 }
+
+
+void UCombatComponent::FireButtonPressed(bool bPressed)
+{
+	bFireButtonPressed = bPressed;
+ 
+
+}

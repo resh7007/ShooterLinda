@@ -24,6 +24,8 @@ protected:
 	void Turn(float Value);
 	void LookUp(float Value);
 	void EquipWeapon();
+	void FireButtonPressed();
+	void FireButtonReleased();
 
 
 private:
@@ -34,8 +36,11 @@ private:
 	class UCameraComponent* FollowCamera;
 	UPROPERTY(VisibleAnywhere)
 	class UCombatComponent* Combat;
+	bool IsFiring;
 public:	
 	class AWeapon* OverlappingWeapon;
 	void SetOverlappingWeapon(AWeapon* Weapon);
-	bool IsWeaponEquipped();
+	bool IsWeaponEquipped(); 
+	FORCEINLINE int GetFiring(){return IsFiring;};
+
 };

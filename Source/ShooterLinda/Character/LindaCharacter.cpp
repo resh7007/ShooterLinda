@@ -43,6 +43,12 @@ void ALindaCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 	PlayerInputComponent->BindAxis("MoveForward", this, &ALindaCharacter::MoveForward);
 	PlayerInputComponent->BindAxis("MoveRight", this, &ALindaCharacter::MoveRight); 
 	PlayerInputComponent->BindAxis("Turn", this, &ALindaCharacter::Turn); 
+
+	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &ALindaCharacter::FireButtonPressed);
+	PlayerInputComponent->BindAction("Fire", IE_Released, this, &ALindaCharacter::FireButtonReleased);
+
+
+
 }
 
 void ALindaCharacter::PostInitializeComponents() 
@@ -109,3 +115,25 @@ bool ALindaCharacter::IsWeaponEquipped()
 {
 	return (Combat && Combat->EquippedWeapon);
 }
+
+void ALindaCharacter::FireButtonPressed()
+{
+	if(Combat)
+	{
+		Combat->FireButtonPressed(true);
+	}
+	IsFiring=true;
+
+}
+void ALindaCharacter::FireButtonReleased()
+{
+	if(Combat)
+	{
+		Combat->FireButtonPressed(false);
+	}
+	IsFiring=false;
+
+}
+ 
+
+

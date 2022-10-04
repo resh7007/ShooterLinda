@@ -20,10 +20,11 @@ public:
 	void EquipWeapon(class AWeapon* WeaponToEquip);
 protected: 
 	virtual void BeginPlay() override;
+	void FireButtonPressed(bool bPressed);
 private:
 	class ALindaCharacter* Character;
 	AWeapon* EquippedWeapon;
-
+	bool bFireButtonPressed;
 public:	 
 
 		
