@@ -58,8 +58,5 @@ int AEnemies::GetDirection()
 	return Dir;
 }
  
-void AEnemies::EquipWeapon()
-{
  
-}
  

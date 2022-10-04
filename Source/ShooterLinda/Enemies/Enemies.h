@@ -18,8 +18,7 @@ protected:
 	virtual void BeginPlay() override;
 
 	void MoveForward(float Value);
-	void MoveRight(float Value);
-	int GetDirection();
+	void MoveRight(float Value); 
 	int Dir=-1;  
 public:	 
 	virtual void Tick(float DeltaTime) override;
@@ -28,5 +27,6 @@ public:
 
 	class AWeapon* weapon; 
 	void EquipWeapon();
+	int GetDirection();
 
 };

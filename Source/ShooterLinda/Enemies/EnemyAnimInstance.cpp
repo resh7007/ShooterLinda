@@ -7,9 +7,9 @@
 
 void UEnemyAnimInstance::NativeInitializeAnimation() 
 {
-    Super::NativeInitializeAnimation();
+  Super::NativeInitializeAnimation();
 
-      Enemy = Cast<AEnemies>(TryGetPawnOwner());
+  Enemy = Cast<AEnemies>(TryGetPawnOwner());
 
 }
 void UEnemyAnimInstance::NativeUpdateAnimation(float DeltaTime) 
@@ -21,12 +21,12 @@ void UEnemyAnimInstance::NativeUpdateAnimation(float DeltaTime)
       Enemy = Cast<AEnemies>(TryGetPawnOwner());
     }
     if(Enemy == nullptr) return;
-
-    // FVector Velocity = LindaCharacter->GetVelocity();
-    // Velocity.Z = 0.f;
-    // Speed =  Velocity.Size();
  
-
     // bIsInAir = LindaCharacter->GetCharacterMovement()->IsFalling();
     // bIsAccelerating = LindaCharacter->GetCharacterMovement()->GetCurrentAcceleration().Size() > 0.f ? true : false;
+
+    GetDirection = Enemy->GetDirection();
 }
+
+
+

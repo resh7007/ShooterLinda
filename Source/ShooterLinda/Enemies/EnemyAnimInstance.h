@@ -22,4 +22,7 @@ private:
 	class AEnemies* Enemy; 
 	UPROPERTY(BlueprintReadOnly, Category = Movement, meta =(AllowPrivateAccess = "true"))
 	bool bIsInRange;
+
+	UPROPERTY(BlueprintReadOnly, Category = Movement, meta =(AllowPrivateAccess = "true"))
+	int GetDirection=1;
 };

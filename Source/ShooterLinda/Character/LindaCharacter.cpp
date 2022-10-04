@@ -105,3 +105,7 @@ void ALindaCharacter::Tick(float DeltaTime)
 
 }
 
+bool ALindaCharacter::IsWeaponEquipped()
+{
+	return (Combat && Combat->EquippedWeapon);
+}

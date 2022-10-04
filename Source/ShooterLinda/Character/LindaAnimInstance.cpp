@@ -28,4 +28,5 @@ void ULindaAnimInstance::NativeUpdateAnimation(float DeltaTime)
 
     bIsInAir = LindaCharacter->GetCharacterMovement()->IsFalling();
     bIsAccelerating = LindaCharacter->GetCharacterMovement()->GetCurrentAcceleration().Size() > 0.f ? true : false;
+    bWeaponEquipped = LindaCharacter->IsWeaponEquipped();
 }
