@@ -4,7 +4,7 @@
 #include "LindaAnimInstance.h"
 #include "LindaCharacter.h"
 #include "GameFramework/CharacterMovementComponent.h"
-
+#include "ShooterLinda/Weapon/Weapon.h"
 void ULindaAnimInstance::NativeInitializeAnimation() 
 {
     Super::NativeInitializeAnimation();
@@ -28,6 +28,21 @@ void ULindaAnimInstance::NativeUpdateAnimation(float DeltaTime)
 
     bIsInAir = LindaCharacter->GetCharacterMovement()->IsFalling();
     bIsAccelerating = LindaCharacter->GetCharacterMovement()->GetCurrentAcceleration().Size() > 0.f ? true : false;
-    bWeaponEquipped = LindaCharacter->IsWeaponEquipped();
     isFiring = LindaCharacter->GetFiring();
+
+    bWeaponEquipped = LindaCharacter->IsWeaponEquipped();
+    EquippedWeapon = LindaCharacter->GetEquippedWeapon();
+
+    if(bWeaponEquipped && EquippedWeapon && EquippedWeapon->GetWeaponMesh() && LindaCharacter->GetMesh())
+    {
+      
+      LeftHandTransform = EquippedWeapon->GetWeaponMesh()->GetSocketTransform(FName("LeftHandSocket"), ERelativeTransformSpace::RTS_World);
+      FVector OutPosition;
+      FRotator OutRotation;
+
+      LindaCharacter->GetMesh()->TransformToBoneSpace(FName("RightHand"), LeftHandTransform.GetLocation(),FRotator::ZeroRotator,OutPosition,OutRotation);
+      LeftHandTransform.SetLocation(OutPosition);
+      LeftHandTransform.SetRotation(FQuat(OutRotation));
+
+    }
 }

@@ -134,6 +134,12 @@ void ALindaCharacter::FireButtonReleased()
 	IsFiring=false;
 
 }
+AWeapon*  ALindaCharacter::GetEquippedWeapon()
+{
+	if(Combat == nullptr) return nullptr;
+	return Combat->EquippedWeapon;
+}
+
  
 
 

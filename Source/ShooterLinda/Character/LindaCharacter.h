@@ -42,5 +42,6 @@ public:
 	void SetOverlappingWeapon(AWeapon* Weapon);
 	bool IsWeaponEquipped(); 
 	FORCEINLINE int GetFiring(){return IsFiring;};
+	AWeapon* GetEquippedWeapon();
 
 };
