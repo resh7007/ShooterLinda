@@ -3,6 +3,7 @@
 
 #include "EnemyAnimInstance.h"
 #include "Enemies.h"
+#include "ShooterLinda/Weapon/Weapon.h" 
 #include "GameFramework/CharacterMovementComponent.h"
 
 void UEnemyAnimInstance::NativeInitializeAnimation() 
@@ -14,18 +15,33 @@ void UEnemyAnimInstance::NativeInitializeAnimation()
 }
 void UEnemyAnimInstance::NativeUpdateAnimation(float DeltaTime) 
 {
-    Super::NativeUpdateAnimation(DeltaTime);
+  Super::NativeUpdateAnimation(DeltaTime);
 
-    if(Enemy == nullptr)
-    {
-      Enemy = Cast<AEnemies>(TryGetPawnOwner());
-    }
-    if(Enemy == nullptr) return;
+  if(Enemy == nullptr)
+  {
+    Enemy = Cast<AEnemies>(TryGetPawnOwner());
+  }
+  if(Enemy == nullptr) return; 
+
+  GetDirection = Enemy->GetDirection();
  
-    // bIsInAir = LindaCharacter->GetCharacterMovement()->IsFalling();
-    // bIsAccelerating = LindaCharacter->GetCharacterMovement()->GetCurrentAcceleration().Size() > 0.f ? true : false;
 
-    GetDirection = Enemy->GetDirection();
+  EquippedWeapon = Enemy->GetEquippedWeapon();
+ 
+  
+
+  if(EquippedWeapon && EquippedWeapon->GetWeaponMesh() && Enemy->GetMesh())
+  { 
+    LeftHandTransform = EquippedWeapon->GetWeaponMesh()->GetSocketTransform(FName("LeftHandSocket"), ERelativeTransformSpace::RTS_World);
+    FVector OutPosition;
+    FRotator OutRotation;
+
+    Enemy->GetMesh()->TransformToBoneSpace(FName("RightHand"), LeftHandTransform.GetLocation(),FRotator::ZeroRotator,OutPosition,OutRotation);
+    LeftHandTransform.SetLocation(OutPosition);
+    LeftHandTransform.SetRotation(FQuat(OutRotation));
+    UE_LOG(LogTemp, Warning, TEXT("positoned into socket"));
+  } 
+
 }
 
 

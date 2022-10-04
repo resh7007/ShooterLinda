@@ -20,13 +20,30 @@ protected:
 	void MoveForward(float Value);
 	void MoveRight(float Value); 
 	int Dir=-1;  
+	void test();
 public:	 
 	virtual void Tick(float DeltaTime) override;
 	
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
-	class AWeapon* weapon; 
-	void EquipWeapon();
+ 
 	int GetDirection();
+	class AWeapon* EquippedWeapon;
+	AWeapon* GetEquippedWeapon();
+	
+	UPROPERTY(VisibleDefaultsOnly)
+    class UChildActorComponent* Weapon1;
 
+
+	UPROPERTY(VisibleAnywhere, Category = "Base Character")
+    TSubclassOf<class AWeapon> WeaponClass;
+
+	UFUNCTION()
+	void Shoot();
+
+	class AWeapon* OverlappingWeapon;
+	void SetOverlappingWeapon(AWeapon* Weapon);
+	void EquipWeapon(class AWeapon* WeaponToEquip);
+
+	FTimerHandle FuzeTimerHandle;
+	float  MaxFuzeTime=2;
 };

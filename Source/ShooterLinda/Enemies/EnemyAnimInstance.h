@@ -16,7 +16,8 @@ class SHOOTERLINDA_API UEnemyAnimInstance : public UAnimInstance
 public:
 	virtual void NativeInitializeAnimation() override;
 	virtual void NativeUpdateAnimation(float DeltaTime) override;
-
+	class AWeapon* EquippedWeapon;
+ 
 private:
 	UPROPERTY(BlueprintReadOnly, Category = Character, meta =(AllowPrivateAccess = "true"))
 	class AEnemies* Enemy; 
@@ -25,4 +26,7 @@ private:
 
 	UPROPERTY(BlueprintReadOnly, Category = Movement, meta =(AllowPrivateAccess = "true"))
 	int GetDirection=1;
+
+	UPROPERTY(BlueprintReadOnly, Category = Movement, meta =(AllowPrivateAccess = "true"))
+	FTransform LeftHandTransform;
 };

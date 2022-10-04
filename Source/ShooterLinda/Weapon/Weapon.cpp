@@ -32,12 +32,7 @@ void AWeapon::BeginPlay()
 {
 	Super::BeginPlay(); 
 	AreaSphere->OnComponentBeginOverlap.AddDynamic(this, &AWeapon::OnSphereOverlap); 
- 
-    AActor* owner=this->GetParentActor();
-	if(owner)
-	{
-		isCollisionOn =false;
-	}
+  
 }
  
  
@@ -50,18 +45,25 @@ void AWeapon::Tick(float DeltaTime)
 void AWeapon::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent,AActor* OtherActor,UPrimitiveComponent* OtherComp,int32 OtherBodyIndex,bool bFromSweep,const FHitResult& SweepResult)
 { 
 	
-	if(!isCollisionOn) return;
+ 	if(!isCollisionOn) return;
 	ALindaCharacter* LindaCharacter = Cast<ALindaCharacter> (OtherActor);
 	if(LindaCharacter)
 	{   
-		
-		LindaCharacter->SetOverlappingWeapon(this);
-		 
+		LindaCharacter->SetOverlappingWeapon(this); 
+	} 
+
+	AEnemies* EnemyCharacter = Cast<AEnemies> (OtherActor);
+	if(EnemyCharacter)
+	{    
+		EnemyCharacter->SetOverlappingWeapon(this); 
+		isCollisionOn =false; 
+
 	} 
 } 
 
+
 void AWeapon::Fire()
-{
+{ 
 	if(FireAnimation)
 	{
 		WeaponMesh->PlayAnimation(FireAnimation,false);

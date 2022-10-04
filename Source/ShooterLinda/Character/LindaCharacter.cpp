@@ -24,10 +24,6 @@ ALindaCharacter::ALindaCharacter()
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 
 	Combat = CreateDefaultSubobject<UCombatComponent>(TEXT("CombatComponent"));
-	
-
- 
-
 
 }
  
