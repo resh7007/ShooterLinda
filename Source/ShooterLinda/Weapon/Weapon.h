@@ -25,6 +25,8 @@ class SHOOTERLINDA_API AWeapon : public AActor
 public:	 
 	AWeapon();
 	virtual void Tick(float DeltaTime) override; 
+	void GetTheOwner();
+	
 protected: 
 	virtual void BeginPlay() override;
 	UFUNCTION()
@@ -45,9 +47,11 @@ private:
 	class USphereComponent* AreaSphere;
 
 	UPROPERTY(VisibleAnywhere)
-	EWeaponState WeaponState;
- 
+	EWeaponState WeaponState; 
+	bool isCollisionOn;
+
 public:	 
 
 	FORCEINLINE void SetWeaponState(EWeaponState State) {WeaponState = State;}
+
 };

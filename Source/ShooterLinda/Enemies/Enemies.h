@@ -7,24 +7,26 @@
 #include "Enemies.generated.h"
 
 UCLASS()
+
 class SHOOTERLINDA_API AEnemies : public ACharacter
 {
 	GENERATED_BODY()
 
 public: 
-	AEnemies();
-	
+	AEnemies(); 
 protected: 
 	virtual void BeginPlay() override;
 
 	void MoveForward(float Value);
 	void MoveRight(float Value);
-private:
 	int GetDirection();
-	int Dir=-1;
+	int Dir=-1;  
 public:	 
 	virtual void Tick(float DeltaTime) override;
- 
+	
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	class AWeapon* weapon; 
+	void EquipWeapon();
 
 };

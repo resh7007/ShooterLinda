@@ -5,6 +5,7 @@
 #include "Components/SphereComponent.h"
 #include "Components/WidgetComponent.h"
 #include "ShooterLinda/Character/LindaCharacter.h"
+#include "ShooterLinda/Enemies/Enemies.h"
 
 AWeapon::AWeapon()
 { 
@@ -21,18 +22,23 @@ AWeapon::AWeapon()
 	AreaSphere = CreateDefaultSubobject<USphereComponent>(TEXT("AreaShpere"));
 	AreaSphere->SetupAttachment(RootComponent);
 	AreaSphere->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
-	AreaSphere->SetCollisionResponseToChannel(ECollisionChannel::ECC_Pawn,ECollisionResponse::ECR_Overlap);
  
-
+	AreaSphere->SetCollisionResponseToChannel(ECollisionChannel::ECC_Pawn,ECollisionResponse::ECR_Overlap); 
+	isCollisionOn = true;
 } 
  
 void AWeapon::BeginPlay()
 {
-	Super::BeginPlay();
+	Super::BeginPlay(); 
 	AreaSphere->OnComponentBeginOverlap.AddDynamic(this, &AWeapon::OnSphereOverlap); 
-
  
+    AActor* owner=this->GetParentActor();
+	if(owner)
+	{
+		isCollisionOn =false;
+	}
 }
+ 
  
 void AWeapon::Tick(float DeltaTime)
 {
@@ -41,12 +47,16 @@ void AWeapon::Tick(float DeltaTime)
 }
 
 void AWeapon::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent,AActor* OtherActor,UPrimitiveComponent* OtherComp,int32 OtherBodyIndex,bool bFromSweep,const FHitResult& SweepResult)
-{
+{ 
+	
+	if(!isCollisionOn) return;
 	ALindaCharacter* LindaCharacter = Cast<ALindaCharacter> (OtherActor);
 	if(LindaCharacter)
-	{ 
+	{   
+		
 		LindaCharacter->SetOverlappingWeapon(this);
-	}
+		 
+	} 
 } 
 
  

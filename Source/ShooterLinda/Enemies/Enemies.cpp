@@ -3,15 +3,17 @@
 
 #include "Enemies.h"
 #include "GameFramework/Actor.h" 
+#include "ShooterLinda/Weapon/Weapon.h" 
+#include "Engine/SkeletalMeshSocket.h" 
+
 AEnemies::AEnemies()
 { 
-	PrimaryActorTick.bCanEverTick = true;
-
+	PrimaryActorTick.bCanEverTick = true;  
 }
  
 void AEnemies::BeginPlay()
 {
-	Super::BeginPlay();
+	Super::BeginPlay(); 
 	
 }
  
@@ -55,3 +57,9 @@ int AEnemies::GetDirection()
 
 	return Dir;
 }
+ 
+void AEnemies::EquipWeapon()
+{
+ 
+}
+ 

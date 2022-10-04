@@ -25,6 +25,10 @@ ALindaCharacter::ALindaCharacter()
 
 	Combat = CreateDefaultSubobject<UCombatComponent>(TEXT("CombatComponent"));
 	
+
+ 
+
+
 }
  
 void ALindaCharacter::BeginPlay()
@@ -88,10 +92,7 @@ void ALindaCharacter::EquipWeapon()
 }
  
 void ALindaCharacter::SetOverlappingWeapon(AWeapon* Weapon)
-{
-	UE_LOG(LogTemp, Warning, TEXT("overlapped"));
-
-	 
+{ 
 	OverlappingWeapon = Weapon;
 	EquipWeapon();
  
@@ -100,7 +101,7 @@ void ALindaCharacter::SetOverlappingWeapon(AWeapon* Weapon)
 void ALindaCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	MoveForward(1);
+	MoveForward(.3f);
 
 }
 
