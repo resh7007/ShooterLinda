@@ -38,7 +38,7 @@ void ALindaCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAxis("MoveForward", this, &ALindaCharacter::MoveForward);
 	PlayerInputComponent->BindAxis("MoveRight", this, &ALindaCharacter::MoveRight); 
-	PlayerInputComponent->BindAxis("Turn", this, &ALindaCharacter::Turn); 
+	//PlayerInputComponent->BindAxis("Turn", this, &ALindaCharacter::Turn); 
 
 	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &ALindaCharacter::FireButtonPressed);
 	PlayerInputComponent->BindAction("Fire", IE_Released, this, &ALindaCharacter::FireButtonReleased);
@@ -77,7 +77,7 @@ void ALindaCharacter::MoveRight(float Value)
 }
 void ALindaCharacter::Turn(float Value)
 {
-	AddControllerYawInput(Value);
+	//AddControllerYawInput(Value);
 }	
 void ALindaCharacter::LookUp(float Value)
 {

@@ -2,6 +2,12 @@
 
 
 #include "Ninja.h"
+ANinja::ANinja()
+{ 
+	PrimaryActorTick.bCanEverTick = true;    
+
+}
+
 
  void ANinja::Tick(float DeltaTime)
 {

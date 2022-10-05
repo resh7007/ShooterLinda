@@ -50,6 +50,8 @@ void AWeapon::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent,AActor* O
 	if(LindaCharacter)
 	{   
 		LindaCharacter->SetOverlappingWeapon(this); 
+		isCollisionOn =false; 
+
 	} 
 
 	AEnemies* EnemyCharacter = Cast<AEnemies> (OtherActor);
