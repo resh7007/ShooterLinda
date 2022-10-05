@@ -46,10 +46,9 @@ AWeapon* AEnemies::GetEquippedWeapon()
  
 void AEnemies::Shoot()
 {
-	if(EquippedWeapon)
-	EquippedWeapon->Fire();
-
-	 /* Activate the fuze to explode the bomb after several seconds */
+	//if(EquippedWeapon)
+	//EquippedWeapon->Fire();
+ 
   	GetWorld()->GetTimerManager().SetTimer(FuzeTimerHandle, this, &AEnemies::Shoot, MaxFuzeTime, false);
 
 }

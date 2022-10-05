@@ -6,7 +6,7 @@
 #include "Components/ActorComponent.h"
 #include "CombatComponent.generated.h"
 
-
+#define TRACE_LENGTH 80000.f
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class SHOOTERLINDA_API UCombatComponent : public UActorComponent
 {
@@ -21,10 +21,13 @@ public:
 protected: 
 	virtual void BeginPlay() override;
 	void FireButtonPressed(bool bPressed);
+	void TraceUnderCrosshairs(FHitResult& TraceHitResult);
 private:
 	class ALindaCharacter* Character;
 	AWeapon* EquippedWeapon;
 	bool bFireButtonPressed;
+
+	FVector HitTarget;
 public:	 
 
 		
