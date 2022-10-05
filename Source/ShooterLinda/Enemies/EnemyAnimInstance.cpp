@@ -38,8 +38,7 @@ void UEnemyAnimInstance::NativeUpdateAnimation(float DeltaTime)
 
     Enemy->GetMesh()->TransformToBoneSpace(FName("RightHand"), LeftHandTransform.GetLocation(),FRotator::ZeroRotator,OutPosition,OutRotation);
     LeftHandTransform.SetLocation(OutPosition);
-    LeftHandTransform.SetRotation(FQuat(OutRotation));
-    UE_LOG(LogTemp, Warning, TEXT("positoned into socket"));
+    LeftHandTransform.SetRotation(FQuat(OutRotation)); 
   } 
 
 }
