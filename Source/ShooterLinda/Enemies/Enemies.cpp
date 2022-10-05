@@ -8,12 +8,7 @@
 
 AEnemies::AEnemies()
 { 
-	PrimaryActorTick.bCanEverTick = true;  
-	// Weapon1 = CreateDefaultSubobject<UChildActorComponent>(TEXT("PlayerWeapon"));
-    // Weapon1->SetChildActorClass(WeaponClass);
-    // Weapon1->CreateChildActor();
-	// Weapon1->SetupAttachment(GetMesh(),FName("RightHandSocket"));
- 	// Weapon = ((AWeapon *)Weapon1->GetChildActor());
+	PrimaryActorTick.bCanEverTick = true;   
 }
  
 void AEnemies::BeginPlay()
@@ -24,8 +19,6 @@ void AEnemies::BeginPlay()
 void AEnemies::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	//MoveForward(.1f);
-	MoveRight(GetDirection()*.1f);
  
 }
  
@@ -33,20 +26,6 @@ void AEnemies::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
-}
-
-void AEnemies::MoveForward(float Value)
-{
-	const FRotator YawRotation(0.f, Controller->GetControlRotation().Yaw,0.f);
-	const FVector Direction(FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X));
-	AddMovementInput(Direction, Value);
-	 
-}
-void AEnemies::MoveRight(float Value)
-{
-	const FRotator YawRotation(0.f, Controller->GetControlRotation().Yaw,0.f);
-	const FVector Direction(FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y));
-	AddMovementInput(Direction, Value);
 }
 
 int AEnemies::GetDirection()
@@ -71,7 +50,7 @@ void AEnemies::Shoot()
 	EquippedWeapon->Fire();
 
 	 /* Activate the fuze to explode the bomb after several seconds */
-  GetWorld()->GetTimerManager().SetTimer(FuzeTimerHandle, this, &AEnemies::Shoot, MaxFuzeTime, false);
+  	GetWorld()->GetTimerManager().SetTimer(FuzeTimerHandle, this, &AEnemies::Shoot, MaxFuzeTime, false);
 
 }
  

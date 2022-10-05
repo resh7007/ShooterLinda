@@ -103,7 +103,7 @@ void ALindaCharacter::SetOverlappingWeapon(AWeapon* Weapon)
 void ALindaCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	MoveForward(.3f);
+	MoveForward(.1f);
 
 }
 

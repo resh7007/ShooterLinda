@@ -3,3 +3,19 @@
 
 #include "Ninja.h"
 
+ void ANinja::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	MoveForward(.1f);
+}
+
+void ANinja::MoveForward(float Value)
+{
+	const FRotator YawRotation(0.f, Controller->GetControlRotation().Yaw,0.f);
+	const FVector Direction(FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X));
+	AddMovementInput(Direction, Value);
+	 
+}
+
+
+	 

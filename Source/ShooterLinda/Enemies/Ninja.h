@@ -13,5 +13,8 @@ UCLASS()
 class SHOOTERLINDA_API ANinja : public AEnemies
 {
 	GENERATED_BODY()
-	
+protected:
+	virtual void MoveForward(float Value); 
+public:
+	virtual void Tick(float DeltaTime) override;
 };

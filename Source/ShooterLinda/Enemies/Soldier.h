@@ -13,5 +13,9 @@ UCLASS()
 class SHOOTERLINDA_API ASoldier : public AEnemies
 {
 	GENERATED_BODY()
-	
+protected:
+	void MoveRight(float Value); 
+public:
+	virtual void Tick(float DeltaTime) override;
+
 };

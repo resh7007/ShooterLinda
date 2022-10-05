@@ -17,8 +17,6 @@ public:
 protected: 
 	virtual void BeginPlay() override;
 
-	void MoveForward(float Value);
-	void MoveRight(float Value); 
 	int Dir=-1;  
 	void test();
 public:	 
