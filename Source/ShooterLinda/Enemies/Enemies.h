@@ -6,6 +6,8 @@
 #include "GameFramework/Character.h"
 #include "Enemies.generated.h"
 
+#define TRACE_LENGTH 80000.f
+
 UCLASS()
 
 class SHOOTERLINDA_API AEnemies : public ACharacter
@@ -16,9 +18,13 @@ public:
 	AEnemies(); 
 protected: 
 	virtual void BeginPlay() override;
+	void TraceUnderCrosshairs();
 
 	int Dir=-1;  
 	void test();
+private:
+	FVector HitTarget;
+
 public:	 
 	virtual void Tick(float DeltaTime) override;
 	

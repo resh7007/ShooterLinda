@@ -21,7 +21,7 @@ public:
 protected: 
 	virtual void BeginPlay() override;
 	void FireButtonPressed(bool bPressed);
-	void TraceUnderCrosshairs(FHitResult& TraceHitResult);
+	void TraceUnderCrosshairs();
 private:
 	class ALindaCharacter* Character;
 	AWeapon* EquippedWeapon;

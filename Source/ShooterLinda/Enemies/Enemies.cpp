@@ -5,6 +5,7 @@
 #include "GameFramework/Actor.h" 
 #include "ShooterLinda/Weapon/Weapon.h" 
 #include "Engine/SkeletalMeshSocket.h" 
+#include "Kismet/GameplayStatics.h"
 
 AEnemies::AEnemies()
 { 
@@ -19,7 +20,7 @@ void AEnemies::BeginPlay()
 void AEnemies::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
- 
+ 	TraceUnderCrosshairs();
 }
  
 void AEnemies::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -46,8 +47,8 @@ AWeapon* AEnemies::GetEquippedWeapon()
  
 void AEnemies::Shoot()
 {
-	//if(EquippedWeapon)
-	//EquippedWeapon->Fire();
+	if(EquippedWeapon)
+	EquippedWeapon->Fire(HitTarget);
  
   	GetWorld()->GetTimerManager().SetTimer(FuzeTimerHandle, this, &AEnemies::Shoot, MaxFuzeTime, false);
 
@@ -75,4 +76,11 @@ void AEnemies::EquipWeapon(class AWeapon* WeaponToEquip)
 
 	EquippedWeapon->SetOwner(this); 
 
+}
+
+
+void AEnemies::TraceUnderCrosshairs()
+{
+	HitTarget = GetOwner()->GetActorLocation();  
+	
 }

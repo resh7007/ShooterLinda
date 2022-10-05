@@ -14,7 +14,12 @@ void AProjectileWeapon::Fire(const FVector& HitTarget)
     {
         FTransform SocketTransform = MuzzleFlashSocket->GetSocketTransform(GetWeaponMesh());
 
-        FVector ToTarget = HitTarget - SocketTransform.GetLocation();
+        FVector ToTarget =  SocketTransform.GetLocation() - HitTarget;
+       
+        ToTarget.Z=0;
+        ToTarget.Y=0;
+
+        
         FRotator TargetRotation = ToTarget.Rotation();
         if(ProjectileClass && InstigatorPawn)
         {
