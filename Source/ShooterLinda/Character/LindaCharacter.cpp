@@ -136,6 +136,19 @@ AWeapon*  ALindaCharacter::GetEquippedWeapon()
 	return Combat->EquippedWeapon;
 }
 
+void ALindaCharacter::PlayHitReactMontage()
+{ 
+	if(Combat==nullptr || Combat->EquippedWeapon==nullptr) return;
+	
+	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+	if(AnimInstance && HitReactMontage)
+	{
+		AnimInstance->Montage_Play(HitReactMontage);
+		FName SectionName("Default"); 
+		AnimInstance->Montage_JumpToSection(SectionName);
+	}
+
+}
  
 
 

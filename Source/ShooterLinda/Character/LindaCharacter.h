@@ -16,6 +16,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	virtual void PostInitializeComponents() override;
+	void PlayHitReactMontage();
 protected: 
 	virtual void BeginPlay() override;
 
@@ -37,6 +38,9 @@ private:
 	UPROPERTY(VisibleAnywhere)
 	class UCombatComponent* Combat;
 	bool IsFiring;
+
+	UPROPERTY(EditAnywhere, Category = Combat)
+	class UAnimMontage* HitReactMontage;
 public:	
 	class AWeapon* OverlappingWeapon;
 	void SetOverlappingWeapon(AWeapon* Weapon);
