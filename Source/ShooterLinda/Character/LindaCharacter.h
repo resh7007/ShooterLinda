@@ -41,6 +41,13 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = Combat)
 	class UAnimMontage* HitReactMontage;
+
+	UPROPERTY(EditAnywhere, Category = "Player Stats")
+	float MaxHealth = 100.f;
+
+	float Health =100.f;
+
+	
 public:	
 	class AWeapon* OverlappingWeapon;
 	void SetOverlappingWeapon(AWeapon* Weapon);
