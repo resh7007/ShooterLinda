@@ -118,8 +118,6 @@ bool ALindaCharacter::IsWeaponEquipped()
 
 void ALindaCharacter::FireButtonPressed()
 { 
-
-
 	if(Combat)
 	{
 		Combat->FireButtonPressed(true);

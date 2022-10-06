@@ -16,12 +16,18 @@ class SHOOTERLINDA_API AEnemies : public ACharacter
 
 public: 
 	AEnemies(); 
+	void PlayHitReactMontage();
+
 protected: 
 	virtual void BeginPlay() override;
 	void TraceUnderCrosshairs();
 
 	int Dir=-1;  
 	void test();
+
+
+	UPROPERTY(EditAnywhere)
+	class UAnimMontage* HitReactMontage;
 private:
 	FVector HitTarget;
 
@@ -50,4 +56,5 @@ public:
 
 	FTimerHandle TimerHandle;
 	float  MaxTime=2;
+
 };

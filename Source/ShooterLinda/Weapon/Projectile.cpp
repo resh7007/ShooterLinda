@@ -9,6 +9,8 @@
 #include "Particles/ParticleSystem.h"
 #include "Sound/SoundCue.h"
 #include "ShooterLinda/Character/LindaCharacter.h"
+#include "ShooterLinda/Enemies/Enemies.h"
+
 AProjectile::AProjectile()
 { 
 	PrimaryActorTick.bCanEverTick = true;
@@ -66,6 +68,14 @@ void AProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimi
 	{
 		LindaCharacter->PlayHitReactMontage();
 	}
+
+
+	AEnemies* EnemyCharacter = Cast<AEnemies>(OtherActor);
+	if(EnemyCharacter)
+	{
+		EnemyCharacter->PlayHitReactMontage();
+	}
+
 	Destroy();
 }
 

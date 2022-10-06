@@ -44,6 +44,15 @@ AWeapon* AEnemies::GetEquippedWeapon()
 {   
 	return EquippedWeapon;
 }
+
+ 
+void AEnemies::SetOverlappingWeapon(AWeapon* weapon)
+{ 
+	OverlappingWeapon = weapon;
+	EquipWeapon(OverlappingWeapon);
+	Shoot();
+}
+
  
 void AEnemies::Shoot()
 {
@@ -52,13 +61,6 @@ void AEnemies::Shoot()
  
   	GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AEnemies::Shoot, MaxTime, false);
 
-}
- 
-void AEnemies::SetOverlappingWeapon(AWeapon* weapon)
-{ 
-	OverlappingWeapon = weapon;
-	EquipWeapon(OverlappingWeapon);
-	Shoot();
 }
 void AEnemies::EquipWeapon(class AWeapon* WeaponToEquip)
 {
@@ -83,4 +85,18 @@ void AEnemies::TraceUnderCrosshairs()
 {
 	HitTarget = GetOwner()->GetActorLocation();  
 	
+}
+
+
+void AEnemies::PlayHitReactMontage()
+{ 
+	 
+	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+	if(AnimInstance && HitReactMontage)
+	{
+		AnimInstance->Montage_Play(HitReactMontage);
+		FName SectionName("Default"); 
+		AnimInstance->Montage_JumpToSection(SectionName);
+	}
+
 }

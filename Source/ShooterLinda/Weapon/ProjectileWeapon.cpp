@@ -17,7 +17,7 @@ void AProjectileWeapon::Fire(const FVector& HitTarget)
         FVector ToTarget =  SocketTransform.GetLocation() - HitTarget;
        
         ToTarget.Z=0;
-        ToTarget.Y=0;
+        ToTarget.Y=0;  
 
         
         FRotator TargetRotation = ToTarget.Rotation();

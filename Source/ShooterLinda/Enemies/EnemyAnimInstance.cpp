@@ -27,8 +27,6 @@ void UEnemyAnimInstance::NativeUpdateAnimation(float DeltaTime)
  
 
   EquippedWeapon = Enemy->GetEquippedWeapon();
- 
-  
 
   if(EquippedWeapon && EquippedWeapon->GetWeaponMesh() && Enemy->GetMesh())
   { 

@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
- #include "Components/BoxComponent.h"
+#include "Components/BoxComponent.h"
 
 #include "Projectile.generated.h"
 
@@ -38,6 +38,9 @@ private:
 
 	UPROPERTY(EditAnywhere)
 	class USoundCue* ImpactSound;
+
+	UPROPERTY(EditAnywhere)
+	float Damage;
 public:	 
 
 };
