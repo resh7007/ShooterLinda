@@ -12,7 +12,7 @@ ANinja::ANinja()
  void ANinja::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	MoveForward(.1f);
+	MoveForward(.01f);
 }
 
 void ANinja::MoveForward(float Value)
