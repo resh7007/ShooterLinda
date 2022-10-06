@@ -7,7 +7,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "ShooterLinda/LindaComponents/CombatComponent.h"
 #include "ShooterLinda/Weapon/Weapon.h"
-
+#include "ShooterLinda/PlayerController/LindaPlayerController.h"
 ALindaCharacter::ALindaCharacter()
 { 
 	PrimaryActorTick.bCanEverTick = true;
@@ -30,15 +30,22 @@ ALindaCharacter::ALindaCharacter()
 void ALindaCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	SetHUD();
+}
+void ALindaCharacter::SetHUD()
+{
+	LindaPlayerController = Cast<ALindaPlayerController>(Controller);
+	if(LindaPlayerController)
+	{
+		LindaPlayerController->SetHUDHealth(Health, MaxHealth); 
+	}
 }
 void ALindaCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAxis("MoveForward", this, &ALindaCharacter::MoveForward);
-	PlayerInputComponent->BindAxis("MoveRight", this, &ALindaCharacter::MoveRight); 
-	//PlayerInputComponent->BindAxis("Turn", this, &ALindaCharacter::Turn); 
+	PlayerInputComponent->BindAxis("MoveRight", this, &ALindaCharacter::MoveRight);  
 
 	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &ALindaCharacter::FireButtonPressed);
 	PlayerInputComponent->BindAction("Fire", IE_Released, this, &ALindaCharacter::FireButtonReleased);
@@ -75,10 +82,7 @@ void ALindaCharacter::MoveRight(float Value)
 		AddMovementInput(Direction, Value);
 	}
 }
-void ALindaCharacter::Turn(float Value)
-{
-	//AddControllerYawInput(Value);
-}	
+ 
 void ALindaCharacter::LookUp(float Value)
 {
 	AddControllerPitchInput(Value);
@@ -113,7 +117,9 @@ bool ALindaCharacter::IsWeaponEquipped()
 }
 
 void ALindaCharacter::FireButtonPressed()
-{
+{ 
+
+
 	if(Combat)
 	{
 		Combat->FireButtonPressed(true);

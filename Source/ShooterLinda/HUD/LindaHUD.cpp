@@ -13,6 +13,7 @@ void ALindaHUD::BeginPlay()
 void ALindaHUD::AddCharacterOverlay()
 {
    APlayerController* PlayerController = GetOwningPlayerController();
+
    if(PlayerController && CharacterOverlayClass)
    {
         CharacterOverlayWidget = CreateWidget<UCharacterOverlayWidget>(PlayerController,CharacterOverlayClass);

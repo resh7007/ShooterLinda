@@ -6,7 +6,7 @@
 #include "GameFramework/Character.h"
 #include "LindaCharacter.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SHOOTERLINDA_API ALindaCharacter : public ACharacter
 {
 	GENERATED_BODY()
@@ -44,15 +44,17 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = "Player Stats")
 	float MaxHealth = 100.f;
-
+	UPROPERTY(VisibleAnywhere, Category = "Player Stats")
 	float Health =100.f;
+	class ALindaPlayerController* LindaPlayerController;
 
-	
 public:	
+
 	class AWeapon* OverlappingWeapon;
 	void SetOverlappingWeapon(AWeapon* Weapon);
 	bool IsWeaponEquipped(); 
 	FORCEINLINE int GetFiring(){return IsFiring;};
 	AWeapon* GetEquippedWeapon();
-
+	UFUNCTION(BlueprintCallable)
+	void SetHUD();
 };

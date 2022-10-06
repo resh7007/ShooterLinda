@@ -14,4 +14,12 @@ class SHOOTERLINDA_API ALindaPlayerController : public APlayerController
 {
 	GENERATED_BODY()
 	
+public:
+	UFUNCTION()
+	void SetHUDHealth(float Health, float MaxHealth);
+protected:
+	virtual void BeginPlay() override;
+private:
+	class ALindaHUD* LindaHUD;
+ 
 };

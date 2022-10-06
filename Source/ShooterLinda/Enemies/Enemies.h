@@ -48,6 +48,6 @@ public:
 	void SetOverlappingWeapon(AWeapon* Weapon);
 	void EquipWeapon(class AWeapon* WeaponToEquip);
 
-	FTimerHandle FuzeTimerHandle;
-	float  MaxFuzeTime=2;
+	FTimerHandle TimerHandle;
+	float  MaxTime=2;
 };

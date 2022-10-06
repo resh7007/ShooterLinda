@@ -50,7 +50,7 @@ void AEnemies::Shoot()
 	if(EquippedWeapon)
 	EquippedWeapon->Fire(HitTarget);
  
-  	GetWorld()->GetTimerManager().SetTimer(FuzeTimerHandle, this, &AEnemies::Shoot, MaxFuzeTime, false);
+  	GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AEnemies::Shoot, MaxTime, false);
 
 }
  
