@@ -40,10 +40,8 @@ protected:
 	class USoundCue* ImpactSound;
 
 	UPROPERTY(EditAnywhere)
-	float Damage;
-
-	UPROPERTY(EditAnywhere)
-	bool bIsEnemyProjectile;
+	float Damage =20.f;
+ 
 private:
 	
 public:	 

@@ -30,11 +30,12 @@ ALindaCharacter::ALindaCharacter()
 void ALindaCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	SetHUD();
+	UpdateHUD();
+	OnTakeAnyDamage.AddDynamic(this, &ALindaCharacter::ReceiveDamage);
 }
-void ALindaCharacter::SetHUD()
+void ALindaCharacter::UpdateHUD()
 {
-	LindaPlayerController = Cast<ALindaPlayerController>(Controller);
+	LindaPlayerController = LindaPlayerController==nullptr ? Cast<ALindaPlayerController>(Controller) : LindaPlayerController;
 	if(LindaPlayerController)
 	{
 		LindaPlayerController->SetHUDHealth(Health, MaxHealth); 
@@ -154,5 +155,9 @@ void ALindaCharacter::PlayHitReactMontage()
 
 }
  
-
-
+void ALindaCharacter::ReceiveDamage(AActor* DamagedActor, float Damage, const UDamageType* DamageType, class AController* InstigatorController, AActor* DamageCauser)
+{
+	Health = FMath::Clamp(Health-Damage,0.f,MaxHealth);
+	UpdateHUD();
+}
+ 

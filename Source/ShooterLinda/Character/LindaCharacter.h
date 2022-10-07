@@ -27,7 +27,8 @@ protected:
 	void EquipWeapon();
 	void FireButtonPressed();
 	void FireButtonReleased();
-
+	UFUNCTION()
+	void ReceiveDamage(AActor* DamagedActor, float Damage, const UDamageType* DamageType, class AController* InstigatorController, AActor* DamageCauser);
 
 private:
 	UPROPERTY(VisibleAnywhere, Category = Camera)
@@ -56,5 +57,5 @@ public:
 	FORCEINLINE int GetFiring(){return IsFiring;};
 	AWeapon* GetEquippedWeapon();
 	UFUNCTION(BlueprintCallable)
-	void SetHUD();
+	void UpdateHUD();
 };

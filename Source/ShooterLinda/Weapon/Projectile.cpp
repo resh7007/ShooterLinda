@@ -9,8 +9,8 @@
 #include "Particles/ParticleSystem.h"
 #include "Sound/SoundCue.h"
 #include "ShooterLinda/Character/LindaCharacter.h"
-#include "ShooterLinda/Enemies/Enemies.h"
-
+#include "ShooterLinda/Enemies/Enemies.h" 
+#include "GameFramework/Character.h"
 AProjectile::AProjectile()
 { 
 	PrimaryActorTick.bCanEverTick = true;
@@ -75,10 +75,18 @@ void AProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimi
 	if(EnemyCharacter)
 	{
 		AEnemies* enemyProjectile = Cast<AEnemies>(GetOwner());
-	 
-	 
 		EnemyCharacter->PlayHitReactMontage();
 	}
+
+    ACharacter* OwnerCharacter = Cast<ACharacter>(GetOwner());  
+    if(OwnerCharacter)
+    {
+        AController* OwnerController = OwnerCharacter->Controller;
+        if(OwnerController)
+        {
+            UGameplayStatics::ApplyDamage(OtherActor, Damage, OwnerController, this, UDamageType::StaticClass());
+        }
+    } 
 
 	Destroy();
 }
