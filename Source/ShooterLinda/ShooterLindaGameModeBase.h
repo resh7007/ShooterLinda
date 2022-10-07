@@ -16,5 +16,8 @@ class SHOOTERLINDA_API AShooterLindaGameModeBase : public AGameModeBase
 public:
 	virtual void PlayerEliminated(class ALindaCharacter* ElimmedCharacter, class ALindaPlayerController* VictimController);
 	virtual void EnemyEliminated(class AEnemies* ElimmedEnemy);
+	virtual void DestroyEnemy(AEnemies* ElimmedEnemy);
+	virtual void DestroyCharacter(class ALindaCharacter* ElimmedCharacter, class ALindaPlayerController* VictimController);
+
 
 };

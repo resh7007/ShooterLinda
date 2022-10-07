@@ -40,7 +40,10 @@ protected:
 	float Health = 40.f; 
 	bool bDead = false;
  
-
+	FTimerHandle DieTimer;
+	UPROPERTY(EditAnywhere, Category = "Player Stats")
+	float DieDelay = 1.f;
+	void DieTimerFinished();
 
 private:
 	FVector HitTarget;

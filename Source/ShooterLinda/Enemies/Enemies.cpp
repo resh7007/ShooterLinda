@@ -7,7 +7,7 @@
 #include "Engine/SkeletalMeshSocket.h" 
 #include "Kismet/GameplayStatics.h"
 #include "ShooterLinda/ShooterLindaGameModeBase.h"
-
+#include "TimerManager.h"
 AEnemies::AEnemies()
 { 
 	PrimaryActorTick.bCanEverTick = true;   
@@ -113,20 +113,30 @@ void AEnemies::Die()
 {
 	bDead = true;
 	PlayDieMontage();
+  
+
+	GetWorldTimerManager().SetTimer(DieTimer, this,&AEnemies::DieTimerFinished,DieDelay);
 }
 void AEnemies::ReceiveDamage(float Damage)
 {
-	Health = FMath::Clamp(Health-Damage,0.f,MaxHealth);
- 	UE_LOG(LogTemp, Warning, TEXT("enemy health=, %f"), Health );
+	Health = FMath::Clamp(Health-Damage,0.f,MaxHealth); 
 	if(Health == 0.f)
 	{
-		// AShooterLindaGameModeBase* ShooterLindaGameModeBase = GetWorld()->GetAuthGameMode<AShooterLindaGameModeBase>();
-		// if(ShooterLindaGameModeBase)
-		// {
-		// 	LindaPlayerController = LindaPlayerController==nullptr ? Cast<ALindaPlayerController>(Controller) :LindaPlayerController; 
-		// 	ShooterLindaGameModeBase->PlayerEliminated(this, LindaPlayerController);
-		// }
-		Die();
+		AShooterLindaGameModeBase* ShooterLindaGameModeBase = GetWorld()->GetAuthGameMode<AShooterLindaGameModeBase>();
+		if(ShooterLindaGameModeBase)
+		{ 
+			ShooterLindaGameModeBase->EnemyEliminated(this);
+		}
+		//Die();
 	}
 }
+void AEnemies::DieTimerFinished()
+{
+	AShooterLindaGameModeBase* ShooterLindaGameModeBase = GetWorld()->GetAuthGameMode<AShooterLindaGameModeBase>();
+	if(ShooterLindaGameModeBase)
+		{
+			 ShooterLindaGameModeBase->DestroyEnemy(this);
+		}
+}
+
  
