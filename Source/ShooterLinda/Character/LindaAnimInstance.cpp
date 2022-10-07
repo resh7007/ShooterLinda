@@ -30,6 +30,8 @@ void ULindaAnimInstance::NativeUpdateAnimation(float DeltaTime)
     bIsAccelerating = LindaCharacter->GetCharacterMovement()->GetCurrentAcceleration().Size() > 0.f ? true : false;
     isFiring = LindaCharacter->GetFiring();
 
+    bDead = LindaCharacter->IsDead();
+
     bWeaponEquipped = LindaCharacter->IsWeaponEquipped();
     EquippedWeapon = LindaCharacter->GetEquippedWeapon();
 

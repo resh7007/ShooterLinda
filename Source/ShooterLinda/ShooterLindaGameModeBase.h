@@ -13,5 +13,6 @@ UCLASS()
 class SHOOTERLINDA_API AShooterLindaGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
-	
+public:
+	virtual void PlayerEliminated(class ALindaCharacter* ElimmedCharacter, class ALindaPlayerController* VictimController);
 };

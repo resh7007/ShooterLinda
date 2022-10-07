@@ -8,6 +8,8 @@
 #include "ShooterLinda/LindaComponents/CombatComponent.h"
 #include "ShooterLinda/Weapon/Weapon.h"
 #include "ShooterLinda/PlayerController/LindaPlayerController.h"
+#include "ShooterLinda/ShooterLindaGameModeBase.h"
+
 ALindaCharacter::ALindaCharacter()
 { 
 	PrimaryActorTick.bCanEverTick = true;
@@ -102,8 +104,6 @@ void ALindaCharacter::SetOverlappingWeapon(AWeapon* Weapon)
 { 
 	OverlappingWeapon = Weapon;
 	EquipWeapon();
- 
-	 
 }
 void ALindaCharacter::Tick(float DeltaTime)
 {
@@ -149,15 +149,40 @@ void ALindaCharacter::PlayHitReactMontage()
 	if(AnimInstance && HitReactMontage)
 	{
 		AnimInstance->Montage_Play(HitReactMontage);
-		FName SectionName("Default"); 
-		AnimInstance->Montage_JumpToSection(SectionName);
+		// FName SectionName("Default"); 
+		// AnimInstance->Montage_JumpToSection(SectionName);
 	}
 
 }
- 
+ void ALindaCharacter::PlayDieMontage()
+{ 
+	if(Combat==nullptr || Combat->EquippedWeapon==nullptr) return;
+	
+	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+	if(AnimInstance && DieMontage)
+	{
+		AnimInstance->Montage_Play(DieMontage); 
+	}
+
+}
+void ALindaCharacter::Die()
+{
+	bDead = true;
+	PlayDieMontage();
+}
 void ALindaCharacter::ReceiveDamage(AActor* DamagedActor, float Damage, const UDamageType* DamageType, class AController* InstigatorController, AActor* DamageCauser)
 {
 	Health = FMath::Clamp(Health-Damage,0.f,MaxHealth);
 	UpdateHUD();
+
+	if(Health == 0.f)
+	{
+		AShooterLindaGameModeBase* ShooterLindaGameModeBase = GetWorld()->GetAuthGameMode<AShooterLindaGameModeBase>();
+		if(ShooterLindaGameModeBase)
+		{
+			LindaPlayerController = LindaPlayerController==nullptr ? Cast<ALindaPlayerController>(Controller) :LindaPlayerController; 
+			ShooterLindaGameModeBase->PlayerEliminated(this, LindaPlayerController);
+		}
+	}
 }
  

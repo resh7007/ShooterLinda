@@ -17,6 +17,10 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	virtual void PostInitializeComponents() override;
 	void PlayHitReactMontage();
+	void PlayDieMontage();
+	void Die();
+
+
 protected: 
 	virtual void BeginPlay() override;
 
@@ -43,12 +47,15 @@ private:
 	UPROPERTY(EditAnywhere, Category = Combat)
 	class UAnimMontage* HitReactMontage;
 
+	UPROPERTY(EditAnywhere, Category = Combat)
+	class UAnimMontage* DieMontage;
+
 	UPROPERTY(EditAnywhere, Category = "Player Stats")
 	float MaxHealth = 100.f;
 	UPROPERTY(VisibleAnywhere, Category = "Player Stats")
 	float Health =100.f;
 	class ALindaPlayerController* LindaPlayerController;
-
+	bool bDead = false;
 public:	
 
 	class AWeapon* OverlappingWeapon;
@@ -58,4 +65,6 @@ public:
 	AWeapon* GetEquippedWeapon();
 	UFUNCTION(BlueprintCallable)
 	void UpdateHUD();
+	FORCEINLINE bool IsDead() const{return bDead;};
+
 };
