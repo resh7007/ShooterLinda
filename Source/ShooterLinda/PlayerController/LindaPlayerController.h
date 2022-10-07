@@ -17,6 +17,7 @@ class SHOOTERLINDA_API ALindaPlayerController : public APlayerController
 public:
 	UFUNCTION()
 	void SetHUDHealth(float Health, float MaxHealth);
+	void ShowRestartBtn();
 protected:
 	virtual void BeginPlay() override;
 private:

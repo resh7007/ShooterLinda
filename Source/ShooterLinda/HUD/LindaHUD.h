@@ -20,6 +20,8 @@ public:
 	TSubclassOf<class UUserWidget> CharacterOverlayClass;
 
 	class UCharacterOverlayWidget* CharacterOverlayWidget;
+
+
 protected:
 	virtual void BeginPlay() override;
 	void AddCharacterOverlay();

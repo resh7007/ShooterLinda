@@ -3,7 +3,8 @@
 
 #include "LindaHUD.h"
 #include "GameFramework/PlayerController.h"
-#include "CharacterOverlayWidget.h"
+#include "CharacterOverlayWidget.h" 
+
 void ALindaHUD::BeginPlay() 
 {
     Super::BeginPlay();
@@ -17,8 +18,10 @@ void ALindaHUD::AddCharacterOverlay()
    if(PlayerController && CharacterOverlayClass)
    {
         CharacterOverlayWidget = CreateWidget<UCharacterOverlayWidget>(PlayerController,CharacterOverlayClass);
-        CharacterOverlayWidget->AddToViewport();
+        CharacterOverlayWidget->AddToViewport(0);
    }
+ 
+  
 }
 
 

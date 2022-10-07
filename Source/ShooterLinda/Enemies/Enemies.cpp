@@ -126,8 +126,7 @@ void AEnemies::ReceiveDamage(float Damage)
 		if(ShooterLindaGameModeBase)
 		{ 
 			ShooterLindaGameModeBase->EnemyEliminated(this);
-		}
-		//Die();
+		} 
 	}
 }
 void AEnemies::DieTimerFinished()

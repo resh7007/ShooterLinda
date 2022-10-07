@@ -56,8 +56,19 @@ private:
 	float Health =100.f;
 	class ALindaPlayerController* LindaPlayerController;
 	bool bDead = false;
-public:	
+	void ReloadLevel();
 
+	FTimerHandle RestartLevelTimer;
+	UPROPERTY(EditAnywhere, Category = "Player Stats")
+	float RestartLevelDelay = 1.f; 
+
+	FTimerHandle DieTimer;
+	UPROPERTY(EditAnywhere, Category = "Player Stats")
+	float DieDelay = 1.f;
+	void DieTimerFinished();
+	
+public:	
+	void ShowRestartBtn();
 	class AWeapon* OverlappingWeapon;
 	void SetOverlappingWeapon(AWeapon* Weapon);
 	bool IsWeaponEquipped(); 

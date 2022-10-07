@@ -9,6 +9,8 @@
 #include "ShooterLinda/Weapon/Weapon.h"
 #include "ShooterLinda/PlayerController/LindaPlayerController.h"
 #include "ShooterLinda/ShooterLindaGameModeBase.h"
+#include "Kismet/GameplayStatics.h"
+#include "TimerManager.h" 
 
 ALindaCharacter::ALindaCharacter()
 { 
@@ -167,7 +169,20 @@ void ALindaCharacter::Die()
 {
 	bDead = true;
 	PlayDieMontage();
+	GetWorldTimerManager().SetTimer(DieTimer, this,&ALindaCharacter::DieTimerFinished,DieDelay);
+
 }
+
+void ALindaCharacter::DieTimerFinished()
+{
+	AShooterLindaGameModeBase* ShooterLindaGameModeBase = GetWorld()->GetAuthGameMode<AShooterLindaGameModeBase>();
+	if(ShooterLindaGameModeBase)
+		{
+			 ShooterLindaGameModeBase->DestroyCharacter(this);
+		}
+}
+
+
 void ALindaCharacter::ReceiveDamage(AActor* DamagedActor, float Damage, const UDamageType* DamageType, class AController* InstigatorController, AActor* DamageCauser)
 {
 	Health = FMath::Clamp(Health-Damage,0.f,MaxHealth);
@@ -179,8 +194,19 @@ void ALindaCharacter::ReceiveDamage(AActor* DamagedActor, float Damage, const UD
 		if(ShooterLindaGameModeBase)
 		{
 			LindaPlayerController = LindaPlayerController==nullptr ? Cast<ALindaPlayerController>(Controller) :LindaPlayerController; 
-			ShooterLindaGameModeBase->PlayerEliminated(this, LindaPlayerController);
+			ShooterLindaGameModeBase->PlayerEliminated(this, LindaPlayerController); 
+			ShowRestartBtn();
 		}
+
 	}
 }
+void ALindaCharacter::ShowRestartBtn()
+{
+	LindaPlayerController = LindaPlayerController==nullptr ? Cast<ALindaPlayerController>(Controller) : LindaPlayerController;
+	if(LindaPlayerController)
+	{
+		LindaPlayerController->ShowRestartBtn();
+	}
+}
+
  

@@ -17,8 +17,6 @@ void ALindaPlayerController::BeginPlay()
 
 void ALindaPlayerController::SetHUDHealth(float Health, float MaxHealth)
 {
- 
-
     LindaHUD = LindaHUD == nullptr ? Cast<ALindaHUD>(GetHUD()) : LindaHUD;
     bool bHUDValid = LindaHUD && LindaHUD->CharacterOverlayWidget && LindaHUD->CharacterOverlayWidget->HealthBar && LindaHUD->CharacterOverlayWidget->HealthText;
  
@@ -28,7 +26,21 @@ void ALindaPlayerController::SetHUDHealth(float Health, float MaxHealth)
         LindaHUD->CharacterOverlayWidget->HealthBar->SetPercent(HealthPercent);
         FString HealthText = FString::Printf(TEXT("%d/%d"), FMath::CeilToInt(Health), FMath::CeilToInt(MaxHealth));
         LindaHUD->CharacterOverlayWidget->HealthText->SetText(FText::FromString(HealthText));
+	}
 
-		}
+  
+
+}
+void ALindaPlayerController::ShowRestartBtn()
+{
+    LindaHUD = LindaHUD == nullptr ? Cast<ALindaHUD>(GetHUD()) : LindaHUD;
+    bool bHUDValid = LindaHUD && LindaHUD->CharacterOverlayWidget && LindaHUD->CharacterOverlayWidget->VerticalBox;
+ 
+    if(bHUDValid)
+    { 
+        LindaHUD->CharacterOverlayWidget->ShowRestartBtn();
+	}
+
+  
 
 }

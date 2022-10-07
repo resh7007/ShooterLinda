@@ -32,16 +32,13 @@ void AShooterLindaGameModeBase::DestroyEnemy(AEnemies* ElimmedEnemy)
         ElimmedEnemy->Destroy();
     }
 }
-void AShooterLindaGameModeBase::DestroyCharacter(class ALindaCharacter* ElimmedCharacter, class ALindaPlayerController* VictimController)
+void AShooterLindaGameModeBase::DestroyCharacter(ALindaCharacter* ElimmedCharacter)
 {
     if(ElimmedCharacter)
     {
         ElimmedCharacter->Reset();
         ElimmedCharacter->Destroy();
     }
-    // if(VictimController)
-    // {
-    //     RestartPlayerAtPlayerStart();
-    // }
+ 
 }
 
