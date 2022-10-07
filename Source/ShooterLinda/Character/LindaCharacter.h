@@ -19,8 +19,7 @@ public:
 	void PlayHitReactMontage();
 	void PlayDieMontage();
 	void Die();
-
-
+	void SetOverlappingHealthBox(float HealAmount);
 protected: 
 	virtual void BeginPlay() override;
 
@@ -71,11 +70,13 @@ public:
 	void ShowRestartBtn();
 	class AWeapon* OverlappingWeapon;
 	void SetOverlappingWeapon(AWeapon* Weapon);
+
 	bool IsWeaponEquipped(); 
 	FORCEINLINE int GetFiring(){return IsFiring;};
 	AWeapon* GetEquippedWeapon();
 	UFUNCTION(BlueprintCallable)
 	void UpdateHUD();
+
 	FORCEINLINE bool IsDead() const{return bDead;};
 
 };

@@ -209,4 +209,10 @@ void ALindaCharacter::ShowRestartBtn()
 	}
 }
 
+void ALindaCharacter::SetOverlappingHealthBox(float HealAmount)
+{
+	Health = FMath::Clamp(Health+HealAmount, Health, MaxHealth);
+	UpdateHUD();
+
+}
  
