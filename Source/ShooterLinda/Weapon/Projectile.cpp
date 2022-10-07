@@ -21,10 +21,11 @@ AProjectile::AProjectile()
 	CollisionBox->SetCollisionResponseToAllChannels(ECollisionResponse::ECR_Ignore);
 	CollisionBox->SetCollisionResponseToChannel(ECollisionChannel::ECC_Visibility,ECollisionResponse::ECR_Block);
 	CollisionBox->SetCollisionResponseToChannel(ECollisionChannel::ECC_WorldStatic,ECollisionResponse::ECR_Block);
-	CollisionBox->SetCollisionResponseToChannel(ECollisionChannel::ECC_Pawn,ECollisionResponse::ECR_Block);
+	CollisionBox->SetCollisionResponseToChannel(ECollisionChannel::ECC_Pawn,ECollisionResponse::ECR_Block); 
 
 	ProjectileMovementComponent = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMovementComponent"));
 	ProjectileMovementComponent->bRotationFollowsVelocity=true;
+ 
 }
  
 void AProjectile::BeginPlay()
@@ -62,7 +63,7 @@ void AProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimi
 	{
 		UGameplayStatics::PlaySoundAtLocation(this, ImpactSound, GetActorLocation());
 	}
-
+ 
 	ALindaCharacter* LindaCharacter = Cast<ALindaCharacter>(OtherActor);
 	if(LindaCharacter)
 	{
@@ -73,6 +74,9 @@ void AProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimi
 	AEnemies* EnemyCharacter = Cast<AEnemies>(OtherActor);
 	if(EnemyCharacter)
 	{
+		AEnemies* enemyProjectile = Cast<AEnemies>(GetOwner());
+	 
+	 
 		EnemyCharacter->PlayHitReactMontage();
 	}
 
