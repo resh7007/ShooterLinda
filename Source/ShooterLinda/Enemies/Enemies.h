@@ -17,7 +17,9 @@ class SHOOTERLINDA_API AEnemies : public ACharacter
 public: 
 	AEnemies(); 
 	void PlayHitReactMontage();
-
+	void PlayDieMontage();
+	void Die();
+	void ReceiveDamage(float Damage);
 protected: 
 	virtual void BeginPlay() override;
 	void TraceUnderCrosshairs();
@@ -28,6 +30,18 @@ protected:
 
 	UPROPERTY(EditAnywhere)
 	class UAnimMontage* HitReactMontage;
+
+	UPROPERTY(EditAnywhere)
+	class UAnimMontage* DieMontage;
+
+	UPROPERTY(EditAnywhere, Category = "Player Stats")
+	float MaxHealth = 40.f;
+	UPROPERTY(VisibleAnywhere, Category = "Player Stats")
+	float Health = 40.f; 
+	bool bDead = false;
+ 
+
+
 private:
 	FVector HitTarget;
 
@@ -56,5 +70,6 @@ public:
 
 	FTimerHandle TimerHandle;
 	float  MaxTime=2;
+	FORCEINLINE bool IsDead() const{return bDead;};
 
 };

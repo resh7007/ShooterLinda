@@ -76,6 +76,7 @@ void AProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimi
 	{
 		AEnemies* enemyProjectile = Cast<AEnemies>(GetOwner());
 		EnemyCharacter->PlayHitReactMontage();
+		EnemyCharacter->ReceiveDamage(Damage);
 	}
 
     ACharacter* OwnerCharacter = Cast<ACharacter>(GetOwner());  

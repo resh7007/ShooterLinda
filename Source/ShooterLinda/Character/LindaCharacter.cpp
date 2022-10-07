@@ -148,9 +148,7 @@ void ALindaCharacter::PlayHitReactMontage()
 	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
 	if(AnimInstance && HitReactMontage)
 	{
-		AnimInstance->Montage_Play(HitReactMontage);
-		// FName SectionName("Default"); 
-		// AnimInstance->Montage_JumpToSection(SectionName);
+		AnimInstance->Montage_Play(HitReactMontage); 
 	}
 
 }

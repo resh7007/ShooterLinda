@@ -6,6 +6,7 @@
 #include "ShooterLinda/Weapon/Weapon.h" 
 #include "Engine/SkeletalMeshSocket.h" 
 #include "Kismet/GameplayStatics.h"
+#include "ShooterLinda/ShooterLindaGameModeBase.h"
 
 AEnemies::AEnemies()
 { 
@@ -94,9 +95,38 @@ void AEnemies::PlayHitReactMontage()
 	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
 	if(AnimInstance && HitReactMontage)
 	{
-		AnimInstance->Montage_Play(HitReactMontage);
-		FName SectionName("Default"); 
-		AnimInstance->Montage_JumpToSection(SectionName);
+		AnimInstance->Montage_Play(HitReactMontage); 
 	}
 
 }
+
+void AEnemies::PlayDieMontage()
+{  
+	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+	if(AnimInstance && DieMontage)
+	{
+		AnimInstance->Montage_Play(DieMontage); 
+	}
+
+}
+void AEnemies::Die()
+{
+	bDead = true;
+	PlayDieMontage();
+}
+void AEnemies::ReceiveDamage(float Damage)
+{
+	Health = FMath::Clamp(Health-Damage,0.f,MaxHealth);
+ 	UE_LOG(LogTemp, Warning, TEXT("enemy health=, %f"), Health );
+	if(Health == 0.f)
+	{
+		// AShooterLindaGameModeBase* ShooterLindaGameModeBase = GetWorld()->GetAuthGameMode<AShooterLindaGameModeBase>();
+		// if(ShooterLindaGameModeBase)
+		// {
+		// 	LindaPlayerController = LindaPlayerController==nullptr ? Cast<ALindaPlayerController>(Controller) :LindaPlayerController; 
+		// 	ShooterLindaGameModeBase->PlayerEliminated(this, LindaPlayerController);
+		// }
+		Die();
+	}
+}
+ 

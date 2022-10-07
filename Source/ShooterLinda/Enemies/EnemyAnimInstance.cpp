@@ -23,6 +23,8 @@ void UEnemyAnimInstance::NativeUpdateAnimation(float DeltaTime)
   }
   if(Enemy == nullptr) return; 
 
+  bDead = Enemy->IsDead();
+
   GetDirection = Enemy->GetDirection();
  
 
