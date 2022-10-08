@@ -47,13 +47,6 @@ AWeapon* AEnemies::GetEquippedWeapon()
 	return EquippedWeapon;
 }
 
-void AEnemies::SetOverlappingWeapon(AWeapon* weapon)
-{ 
-	OverlappingWeapon = weapon;
-	EquipWeapon(OverlappingWeapon);
-	Shoot();
-	
-}
  
 void AEnemies::Shoot()
 {

@@ -59,9 +59,7 @@ public:
 
 	UFUNCTION()
 	void Shoot();
-
-	class AWeapon* OverlappingWeapon;
-	void SetOverlappingWeapon(AWeapon* Weapon);
+ 
 	UFUNCTION(BlueprintCallable, Category="Weapon")
 	void EquipWeapon(class AWeapon* WeaponToEquip);
 

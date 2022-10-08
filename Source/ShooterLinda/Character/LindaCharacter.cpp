@@ -179,6 +179,7 @@ void ALindaCharacter::DieTimerFinished()
 		{
 			 ShooterLindaGameModeBase->DestroyCharacter(this);
 		}
+	
 }
 
 
@@ -210,8 +211,9 @@ void ALindaCharacter::ReceiveDamage(float Damage)
 			Combat->DestroyWeapon();
 		}
 		AShooterLindaGameModeBase* ShooterLindaGameModeBase = GetWorld()->GetAuthGameMode<AShooterLindaGameModeBase>();
-		if(ShooterLindaGameModeBase)
+		if(ShooterLindaGameModeBase && !called)
 		{
+			called=true;
 			LindaPlayerController = LindaPlayerController==nullptr ? Cast<ALindaPlayerController>(Controller) :LindaPlayerController; 
 			ShooterLindaGameModeBase->PlayerEliminated(this, LindaPlayerController); 
 			ShowRestartBtn();

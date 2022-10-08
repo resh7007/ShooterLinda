@@ -39,7 +39,7 @@ void AMovingPlatform::SpawnHealthBox()
 		healthBoxLocation.X += randomDistanceX; 
 
 		float randomDistanceY = FMath::RandRange(-400.f, 400.f);
-		healthBoxLocation.Y += randomDistanceY; 
+		healthBoxLocation.Y = randomDistanceY; 
 
 
 		world->SpawnActor<AHealthBox>(HealthBoxBlueprint, healthBoxLocation, FRotator::ZeroRotator);

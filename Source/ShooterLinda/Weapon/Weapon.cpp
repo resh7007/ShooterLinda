@@ -25,8 +25,7 @@ AWeapon::AWeapon()
 	AreaSphere->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
  
 	AreaSphere->SetCollisionResponseToChannel(ECollisionChannel::ECC_Pawn,ECollisionResponse::ECR_Overlap);  
-
-	isCollisionOn = true;
+ 
 } 
  
 void AWeapon::BeginPlay()
@@ -45,25 +44,14 @@ void AWeapon::Tick(float DeltaTime)
 
 void AWeapon::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent,AActor* OtherActor,UPrimitiveComponent* OtherComp,int32 OtherBodyIndex,bool bFromSweep,const FHitResult& SweepResult)
 { 
-	
- 	if(!isCollisionOn) return;
+	 
 	ALindaCharacter* LindaCharacter = Cast<ALindaCharacter> (OtherActor);
 	if(LindaCharacter)
 	{   
-		LindaCharacter->SetOverlappingWeapon(this); 
-		isCollisionOn =false; 
+		LindaCharacter->SetOverlappingWeapon(this);  
 
 	} 
-
-	AEnemies* EnemyCharacter = Cast<AEnemies> (OtherActor);
-	if(EnemyCharacter)
-	{    
-		EnemyCharacter->SetOverlappingWeapon(this); 
-		isCollisionOn =false; 
-		UE_LOG(LogTemp, Warning, TEXT("weapon touching enemy") );
-
-	} 
-
+ 
 } 
 
 

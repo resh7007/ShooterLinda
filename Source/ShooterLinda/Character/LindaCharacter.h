@@ -59,6 +59,7 @@ private:
 	class ALindaPlayerController* LindaPlayerController;
 	bool bDead = false;
 	void ReloadLevel();
+	bool called = false;
 
 	FTimerHandle RestartLevelTimer;
 	UPROPERTY(EditAnywhere, Category = "Player Stats")

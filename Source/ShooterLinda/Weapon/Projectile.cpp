@@ -87,17 +87,7 @@ void AProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimi
 		EnemyCharacter->PlayHitReactMontage();
 		EnemyCharacter->ReceiveDamage(Damage);
 	}
-
-    // ACharacter* OwnerCharacter = Cast<ACharacter>(GetOwner());  
-    // if(OwnerCharacter)
-    // {
-    //     AController* OwnerController = OwnerCharacter->Controller;
-    //     if(OwnerController)
-    //     {
-    //         UGameplayStatics::ApplyDamage(OtherActor, Damage, OwnerController, this, UDamageType::StaticClass());
-    //     }
-    // } 
-
+ 
 	Destroy();
 }
 
