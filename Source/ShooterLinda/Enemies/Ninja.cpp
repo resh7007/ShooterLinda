@@ -11,23 +11,22 @@ ANinja::ANinja()
 void ANinja::BeginPlay()
 {
 	Super::BeginPlay();    
+	GetWorldTimerManager().SetTimer(MoveTimer, this,&ANinja::MoveForward,.05f,true);
 
 }
  
 
  void ANinja::Tick(float DeltaTime)
 {
-	Super::Tick(DeltaTime);
-	MoveForward();
+	Super::Tick(DeltaTime); 
 }
 
 void ANinja::MoveForward()
 {
-	float Value = .02f;
-	const FRotator YawRotation(0.f, Controller->GetControlRotation().Yaw,0.f);
-	const FVector Direction(FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X));
-	AddMovementInput(Direction, Value);
-	 
+	FVector CurrentLocation = this->GetActorLocation(); 
+  	CurrentLocation.X -= 2; 
+    SetActorLocation(CurrentLocation); 
+ 
 }
 
 

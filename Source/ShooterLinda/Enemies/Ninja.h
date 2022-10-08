@@ -19,6 +19,7 @@ protected:
 	virtual void MoveForward(); 
 	virtual void BeginPlay() override;
 
+	FTimerHandle MoveTimer;   
 public:
 	virtual void Tick(float DeltaTime) override;
 };
