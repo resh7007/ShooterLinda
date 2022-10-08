@@ -8,6 +8,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "ShooterLinda/ShooterLindaGameModeBase.h"
 #include "TimerManager.h"
+#include "Components/CapsuleComponent.h"
 AEnemies::AEnemies()
 { 
 	PrimaryActorTick.bCanEverTick = true;   
@@ -46,14 +47,12 @@ AWeapon* AEnemies::GetEquippedWeapon()
 	return EquippedWeapon;
 }
 
- 
 void AEnemies::SetOverlappingWeapon(AWeapon* weapon)
 { 
 	OverlappingWeapon = weapon;
 	EquipWeapon(OverlappingWeapon);
 	Shoot();
 }
-
  
 void AEnemies::Shoot()
 {
@@ -113,8 +112,6 @@ void AEnemies::Die()
 {
 	bDead = true;
 	PlayDieMontage();
-  
-
 	GetWorldTimerManager().SetTimer(DieTimer, this,&AEnemies::DieTimerFinished,DieDelay);
 }
 void AEnemies::ReceiveDamage(float Damage)
@@ -122,6 +119,14 @@ void AEnemies::ReceiveDamage(float Damage)
 	Health = FMath::Clamp(Health-Damage,0.f,MaxHealth); 
 	if(Health == 0.f)
 	{
+		GetMesh()->SetCollisionEnabled(ECollisionEnabled::NoCollision); 
+		GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+		
+		if(EquippedWeapon)
+		{
+			EquippedWeapon->Destroy();
+		}
+
 		AShooterLindaGameModeBase* ShooterLindaGameModeBase = GetWorld()->GetAuthGameMode<AShooterLindaGameModeBase>();
 		if(ShooterLindaGameModeBase)
 		{ 

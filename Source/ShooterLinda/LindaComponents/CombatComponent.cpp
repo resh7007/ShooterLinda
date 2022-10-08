@@ -58,3 +58,10 @@ void UCombatComponent::TraceUnderCrosshairs()
 	HitTarget = GetOwner()->GetActorLocation();
 	
 }
+void UCombatComponent::DestroyWeapon()
+{
+	if(EquippedWeapon)
+	{
+		EquippedWeapon->Destroy();
+	}
+}

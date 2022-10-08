@@ -190,6 +190,10 @@ void ALindaCharacter::ReceiveDamage(AActor* DamagedActor, float Damage, const UD
 
 	if(Health == 0.f)
 	{
+		if(Combat)
+		{
+			Combat->DestroyWeapon();
+		}
 		AShooterLindaGameModeBase* ShooterLindaGameModeBase = GetWorld()->GetAuthGameMode<AShooterLindaGameModeBase>();
 		if(ShooterLindaGameModeBase)
 		{

@@ -63,7 +63,7 @@ private:
 
 	FTimerHandle DieTimer;
 	UPROPERTY(EditAnywhere, Category = "Player Stats")
-	float DieDelay = 1.f;
+	float DieDelay = 1.5f;
 	void DieTimerFinished();
 	
 public:	

@@ -18,6 +18,7 @@ public:
 
 	friend class ALindaCharacter;
 	void EquipWeapon(class AWeapon* WeaponToEquip);
+	void DestroyWeapon();
 protected: 
 	virtual void BeginPlay() override;
 	void FireButtonPressed(bool bPressed);
