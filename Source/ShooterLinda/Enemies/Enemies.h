@@ -20,14 +20,11 @@ public:
 	void PlayDieMontage();
 	void Die();
 	void ReceiveDamage(float Damage);
+	int Dir=-1;  
+	int GetDirection();
 protected: 
 	virtual void BeginPlay() override;
 	void GetOwnerLocation();
-
-	int Dir=-1;  
-	void test();
-
-
 	UPROPERTY(EditAnywhere)
 	class UAnimMontage* HitReactMontage;
 
@@ -53,7 +50,6 @@ public:
 	
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
  
-	int GetDirection();
 	class AWeapon* EquippedWeapon;
 	AWeapon* GetEquippedWeapon();
 	

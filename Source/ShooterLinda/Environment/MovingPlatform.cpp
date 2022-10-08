@@ -18,8 +18,8 @@ void AMovingPlatform::BeginPlay()
 {
 	Super::BeginPlay();
 	SpawnHealthBox();
-	//SpawnEnemy();
-
+	SpawnSoldierEnemy();
+	SpawnNinjaEnemy();
 }
  
 void AMovingPlatform::Tick(float DeltaTime)
@@ -46,7 +46,7 @@ void AMovingPlatform::SpawnHealthBox()
 	}
 }
  
-void AMovingPlatform::SpawnEnemy()
+void AMovingPlatform::SpawnSoldierEnemy()
 {
 	UWorld* world=GetWorld();
 	if(world)
@@ -58,9 +58,30 @@ void AMovingPlatform::SpawnEnemy()
 		enemyLocation.X += randomDistanceX; 
 
 		float randomDistanceY = FMath::RandRange(-400.f, 400.f);
-		enemyLocation.Y += randomDistanceY; 
+		enemyLocation.Y = randomDistanceY;  
 
-		world->SpawnActor<AActor>(EnemyBlueprint, enemyLocation, FRotator::ZeroRotator); 
+		world->SpawnActor<AEnemies>(SoldierBlueprint, enemyLocation, FRotator(0.f,180.0f,0.f)); 
 		 
 	}
 }
+ 
+ void AMovingPlatform::SpawnNinjaEnemy()
+{
+	UWorld* world=GetWorld();
+	if(world)
+	{
+		FVector playerLocation = UGameplayStatics::GetPlayerCharacter(world, 0)->GetActorLocation();
+		FVector enemyLocation = playerLocation;
+
+		float randomDistanceX = FMath::RandRange(1220.f, 1500.f);
+		enemyLocation.X += randomDistanceX; 
+
+		float randomDistanceY = FMath::RandRange(-400.f, 400.f);
+		enemyLocation.Y = randomDistanceY;  
+
+		world->SpawnActor<AEnemies>(NinjaBlueprint, enemyLocation, FRotator(0.f,180.0f,0.f)); 
+		 
+	}
+}
+ 
+ 

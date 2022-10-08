@@ -43,7 +43,10 @@ protected:
 	float Damage =20.f;
  
 private:
-	
+	FTimerHandle DieTimer;
+	UPROPERTY(EditAnywhere, Category = "Player Stats")
+	float DieDelay = 15.f;
+	void DieTimerFinished();
 public:	 
 
 };

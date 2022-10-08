@@ -17,6 +17,8 @@ public:
 	ANinja(); 
 protected:
 	virtual void MoveForward(float Value); 
+	virtual void BeginPlay() override;
+
 public:
 	virtual void Tick(float DeltaTime) override;
 };

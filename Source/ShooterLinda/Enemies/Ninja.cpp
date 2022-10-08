@@ -4,10 +4,16 @@
 #include "Ninja.h"
 ANinja::ANinja()
 { 
-	PrimaryActorTick.bCanEverTick = true;    
-
+	PrimaryActorTick.bCanEverTick = false; 
 }
 
+ 
+void ANinja::BeginPlay()
+{
+	Super::BeginPlay();    
+
+}
+ 
 
  void ANinja::Tick(float DeltaTime)
 {

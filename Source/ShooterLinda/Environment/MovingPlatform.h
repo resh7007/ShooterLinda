@@ -17,15 +17,16 @@ protected:
 	virtual void BeginPlay() override;
 private:
 	void SpawnHealthBox();
-	void SpawnEnemy();
-
-
-
+	void SpawnSoldierEnemy();
+	void SpawnNinjaEnemy(); 
 
 public:	 
 	virtual void Tick(float DeltaTime) override;
 	UPROPERTY(EditAnywhere, Category = "Spawn")
 	TSubclassOf<class AHealthBox> HealthBoxBlueprint;
 	UPROPERTY(EditAnywhere, Category = "Spawn")
-	TSubclassOf<class AActor> EnemyBlueprint;
+	TSubclassOf<class AEnemies> SoldierBlueprint;
+	UPROPERTY(EditAnywhere, Category = "Spawn")
+	TSubclassOf<class AEnemies> NinjaBlueprint;
+ 
 };

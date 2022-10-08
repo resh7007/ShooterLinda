@@ -60,6 +60,16 @@
 		"directory": "/Users/Shared/Epic Games/UE_5.0/Engine/Source"
 	},
 	{
+		"file": "/Users/raushanmac/ShooterLinda/Source/ShooterLinda/Environment/HealthBox.cpp",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @/Users/raushanmac/ShooterLinda/.vscode/compileCommands_Default/ShooterLinda.204.rsp",
+		"directory": "/Users/Shared/Epic Games/UE_5.0/Engine/Source"
+	},
+	{
+		"file": "/Users/raushanmac/ShooterLinda/Source/ShooterLinda/Environment/HealthBox.h",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @/Users/raushanmac/ShooterLinda/.vscode/compileCommands_Default/ShooterLinda.204.rsp",
+		"directory": "/Users/Shared/Epic Games/UE_5.0/Engine/Source"
+	},
+	{
 		"file": "/Users/raushanmac/ShooterLinda/Source/ShooterLinda/Environment/MovingPlatform.cpp",
 		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @/Users/raushanmac/ShooterLinda/.vscode/compileCommands_Default/ShooterLinda.204.rsp",
 		"directory": "/Users/Shared/Epic Games/UE_5.0/Engine/Source"

@@ -11,6 +11,7 @@
 #include "ShooterLinda/Character/LindaCharacter.h"
 #include "ShooterLinda/Enemies/Enemies.h" 
 #include "GameFramework/Character.h"
+#include "TimerManager.h"
 AProjectile::AProjectile()
 { 
 	PrimaryActorTick.bCanEverTick = true;
@@ -45,8 +46,14 @@ void AProjectile::BeginPlay()
 	}
 
 	CollisionBox->OnComponentHit.AddDynamic(this, &AProjectile::OnHit);
+	GetWorldTimerManager().SetTimer(DieTimer, this,&AProjectile::DieTimerFinished,DieDelay);
+
 }
- 
+
+void AProjectile::DieTimerFinished()
+{
+	this->Destroy();
+}
 void AProjectile::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);

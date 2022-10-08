@@ -11,7 +11,7 @@
 #include "Components/CapsuleComponent.h"
 AEnemies::AEnemies()
 { 
-	PrimaryActorTick.bCanEverTick = true;   
+	PrimaryActorTick.bCanEverTick =false;//true;   
 }
  
 void AEnemies::BeginPlay()
