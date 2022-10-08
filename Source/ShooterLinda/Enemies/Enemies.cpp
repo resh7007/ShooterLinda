@@ -11,13 +11,13 @@
 #include "Components/CapsuleComponent.h"
 AEnemies::AEnemies()
 { 
-	PrimaryActorTick.bCanEverTick =false;//true;   
+	PrimaryActorTick.bCanEverTick =false;   
 }
  
 void AEnemies::BeginPlay()
 {
 	Super::BeginPlay();   
-
+	 
 }
  
 void AEnemies::Tick(float DeltaTime)
