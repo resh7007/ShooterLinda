@@ -22,7 +22,7 @@ public:
 	void ReceiveDamage(float Damage);
 protected: 
 	virtual void BeginPlay() override;
-	void TraceUnderCrosshairs();
+	void GetOwnerLocation();
 
 	int Dir=-1;  
 	void test();
@@ -69,10 +69,19 @@ public:
 
 	class AWeapon* OverlappingWeapon;
 	void SetOverlappingWeapon(AWeapon* Weapon);
+	UFUNCTION(BlueprintCallable, Category="Weapon")
 	void EquipWeapon(class AWeapon* WeaponToEquip);
 
 	FTimerHandle TimerHandle;
 	float  MaxTime=2;
+
+	FTimerHandle TimerEquip;
+	float  delayTime=3;
+
 	FORCEINLINE bool IsDead() const{return bDead;};
+	UPROPERTY(BlueprintReadWrite, Category = Movement, meta =(AllowPrivateAccess = "true"))
+	class AWeapon* EnemyWeapon;  
+	UFUNCTION(BlueprintCallable, Category="Weapon")
+	void EquipBPWeapon(USceneComponent* obj);
 
 };

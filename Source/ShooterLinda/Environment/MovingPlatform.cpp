@@ -4,6 +4,7 @@
 #include "MovingPlatform.h"
 #include "GameFramework/Actor.h" 
 #include "HealthBox.h"
+#include "ShooterLinda/Enemies/Enemies.h"
 #include "Kismet/GameplayStatics.h"
 #include "GameFramework/Character.h"
 
@@ -17,6 +18,8 @@ void AMovingPlatform::BeginPlay()
 {
 	Super::BeginPlay();
 	SpawnHealthBox();
+	//SpawnEnemy();
+
 }
  
 void AMovingPlatform::Tick(float DeltaTime)
@@ -30,8 +33,6 @@ void AMovingPlatform::SpawnHealthBox()
 	if(world)
 	{
 		FVector playerLocation = UGameplayStatics::GetPlayerCharacter(world, 0)->GetActorLocation();
-
-
 		FVector healthBoxLocation = playerLocation;
 
 		float randomDistanceX = FMath::RandRange(990.f, 1200.f);
@@ -42,8 +43,24 @@ void AMovingPlatform::SpawnHealthBox()
 
 
 		world->SpawnActor<AHealthBox>(HealthBoxBlueprint, healthBoxLocation, FRotator::ZeroRotator);
-		 
 	}
 }
  
+void AMovingPlatform::SpawnEnemy()
+{
+	UWorld* world=GetWorld();
+	if(world)
+	{
+		FVector playerLocation = UGameplayStatics::GetPlayerCharacter(world, 0)->GetActorLocation();
+		FVector enemyLocation = playerLocation;
 
+		float randomDistanceX = FMath::RandRange(1220.f, 1500.f);
+		enemyLocation.X += randomDistanceX; 
+
+		float randomDistanceY = FMath::RandRange(-400.f, 400.f);
+		enemyLocation.Y += randomDistanceY; 
+
+		world->SpawnActor<AActor>(EnemyBlueprint, enemyLocation, FRotator::ZeroRotator); 
+		 
+	}
+}

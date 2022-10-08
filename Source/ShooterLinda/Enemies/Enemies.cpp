@@ -16,13 +16,14 @@ AEnemies::AEnemies()
  
 void AEnemies::BeginPlay()
 {
-	Super::BeginPlay();  
+	Super::BeginPlay();   
+
 }
  
 void AEnemies::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
- 	TraceUnderCrosshairs();
+ 	GetOwnerLocation();
 }
  
 void AEnemies::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -52,6 +53,7 @@ void AEnemies::SetOverlappingWeapon(AWeapon* weapon)
 	OverlappingWeapon = weapon;
 	EquipWeapon(OverlappingWeapon);
 	Shoot();
+	
 }
  
 void AEnemies::Shoot()
@@ -80,8 +82,32 @@ void AEnemies::EquipWeapon(class AWeapon* WeaponToEquip)
 
 }
 
+void AEnemies::EquipBPWeapon(USceneComponent* obj)
+{
+	TArray<AActor*> ParentedActors;
+	GetAttachedActors(ParentedActors);
+	FString name=ParentedActors[0]->GetName();
 
-void AEnemies::TraceUnderCrosshairs()
+	UE_LOG(LogTemp, Warning, TEXT("EquipBPWeapon is called!!!! attached actor count=%s"),*name);
+	EnemyWeapon = Cast<AWeapon>(ParentedActors[0]);
+	if(EnemyWeapon == nullptr) return;
+	UE_LOG(LogTemp, Warning, TEXT("EnemyWeapon is not null!!!!!!"));
+	EquippedWeapon = EnemyWeapon;
+	EquippedWeapon->SetWeaponState(EWeaponState::EWS_Equipped); 
+
+	const USkeletalMeshSocket* HandSocket = GetMesh()->GetSocketByName(FName("RightHandSocket"));
+
+	if(HandSocket)
+	{
+		HandSocket->AttachActor(EquippedWeapon,GetMesh());
+	}
+
+	EquippedWeapon->SetOwner(this); 
+	Shoot();
+
+}
+
+void AEnemies::GetOwnerLocation()
 {
 	HitTarget = GetOwner()->GetActorLocation();  
 	

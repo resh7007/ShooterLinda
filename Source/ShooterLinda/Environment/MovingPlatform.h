@@ -17,6 +17,8 @@ protected:
 	virtual void BeginPlay() override;
 private:
 	void SpawnHealthBox();
+	void SpawnEnemy();
+
 
 
 
@@ -24,4 +26,6 @@ public:
 	virtual void Tick(float DeltaTime) override;
 	UPROPERTY(EditAnywhere, Category = "Spawn")
 	TSubclassOf<class AHealthBox> HealthBoxBlueprint;
+	UPROPERTY(EditAnywhere, Category = "Spawn")
+	TSubclassOf<class AActor> EnemyBlueprint;
 };

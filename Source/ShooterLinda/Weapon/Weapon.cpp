@@ -60,8 +60,10 @@ void AWeapon::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent,AActor* O
 	{    
 		EnemyCharacter->SetOverlappingWeapon(this); 
 		isCollisionOn =false; 
+		UE_LOG(LogTemp, Warning, TEXT("weapon touching enemy") );
 
 	} 
+
 } 
 
 
