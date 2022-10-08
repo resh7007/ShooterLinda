@@ -26,7 +26,7 @@ public:
 	AWeapon();
 	virtual void Tick(float DeltaTime) override; 
 	void GetTheOwner();
-	virtual void Fire(const FVector& HitTarget);
+	virtual void Fire(int shootDir);
 	
 protected: 
 	virtual void BeginPlay() override;

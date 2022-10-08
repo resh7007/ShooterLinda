@@ -20,6 +20,8 @@ public:
 	void PlayDieMontage();
 	void Die();
 	void SetOverlappingHealthBox(float HealAmount);
+	void ReceiveDamage(float Damage);
+
 protected: 
 	virtual void BeginPlay() override;
 
@@ -30,8 +32,9 @@ protected:
 	void EquipWeapon();
 	void FireButtonPressed();
 	void FireButtonReleased();
-	UFUNCTION()
-	void ReceiveDamage(AActor* DamagedActor, float Damage, const UDamageType* DamageType, class AController* InstigatorController, AActor* DamageCauser);
+
+	// UFUNCTION()
+	// void ReceiveDamage(AActor* DamagedActor, float Damage, const UDamageType* DamageType, class AController* InstigatorController, AActor* DamageCauser);
 
 private:
 	UPROPERTY(VisibleAnywhere, Category = Camera)

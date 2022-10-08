@@ -18,6 +18,6 @@ private:
 	TSubclassOf<class AProjectile> ProjectileClass;
 
 public:
-	virtual void Fire(const FVector& HitTarget) override;
+	virtual void Fire(int shootDir) override;
 
 };

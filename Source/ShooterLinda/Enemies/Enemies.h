@@ -23,8 +23,7 @@ public:
 	int Dir=-1;  
 	int GetDirection();
 protected: 
-	virtual void BeginPlay() override;
-	void GetOwnerLocation();
+	virtual void BeginPlay() override; 
 	UPROPERTY(EditAnywhere)
 	class UAnimMontage* HitReactMontage;
 
@@ -41,9 +40,7 @@ protected:
 	UPROPERTY(EditAnywhere, Category = "Player Stats")
 	float DieDelay = 1.f;
 	void DieTimerFinished();
-
-private:
-	FVector HitTarget;
+ 
 
 public:	 
 	virtual void Tick(float DeltaTime) override;

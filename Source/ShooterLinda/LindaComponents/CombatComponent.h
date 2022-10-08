@@ -21,14 +21,12 @@ public:
 	void DestroyWeapon();
 protected: 
 	virtual void BeginPlay() override;
-	void FireButtonPressed(bool bPressed);
-	void TraceUnderCrosshairs();
+	void FireButtonPressed(bool bPressed); 
 private:
 	class ALindaCharacter* Character;
 	AWeapon* EquippedWeapon;
 	bool bFireButtonPressed;
-
-	FVector HitTarget;
+ 
 public:	 
 
 		

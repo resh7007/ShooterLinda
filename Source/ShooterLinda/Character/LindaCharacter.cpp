@@ -34,8 +34,7 @@ ALindaCharacter::ALindaCharacter()
 void ALindaCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	UpdateHUD();
-	OnTakeAnyDamage.AddDynamic(this, &ALindaCharacter::ReceiveDamage);
+	UpdateHUD(); 
 }
 void ALindaCharacter::UpdateHUD()
 {
@@ -183,27 +182,7 @@ void ALindaCharacter::DieTimerFinished()
 }
 
 
-void ALindaCharacter::ReceiveDamage(AActor* DamagedActor, float Damage, const UDamageType* DamageType, class AController* InstigatorController, AActor* DamageCauser)
-{
-	Health = FMath::Clamp(Health-Damage,0.f,MaxHealth);
-	UpdateHUD();
-
-	if(Health == 0.f)
-	{
-		if(Combat)
-		{
-			Combat->DestroyWeapon();
-		}
-		AShooterLindaGameModeBase* ShooterLindaGameModeBase = GetWorld()->GetAuthGameMode<AShooterLindaGameModeBase>();
-		if(ShooterLindaGameModeBase)
-		{
-			LindaPlayerController = LindaPlayerController==nullptr ? Cast<ALindaPlayerController>(Controller) :LindaPlayerController; 
-			ShooterLindaGameModeBase->PlayerEliminated(this, LindaPlayerController); 
-			ShowRestartBtn();
-		}
-
-	}
-}
+ 
 void ALindaCharacter::ShowRestartBtn()
 {
 	LindaPlayerController = LindaPlayerController==nullptr ? Cast<ALindaPlayerController>(Controller) : LindaPlayerController;
@@ -220,3 +199,22 @@ void ALindaCharacter::SetOverlappingHealthBox(float HealAmount)
 
 }
  
+void ALindaCharacter::ReceiveDamage(float Damage)
+{
+	Health = FMath::Clamp(Health-Damage,0.f,MaxHealth); 
+	UpdateHUD();
+	if(Health == 0.f)
+	{
+	if(Combat)
+		{
+			Combat->DestroyWeapon();
+		}
+		AShooterLindaGameModeBase* ShooterLindaGameModeBase = GetWorld()->GetAuthGameMode<AShooterLindaGameModeBase>();
+		if(ShooterLindaGameModeBase)
+		{
+			LindaPlayerController = LindaPlayerController==nullptr ? Cast<ALindaPlayerController>(Controller) :LindaPlayerController; 
+			ShooterLindaGameModeBase->PlayerEliminated(this, LindaPlayerController); 
+			ShowRestartBtn();
+		}
+	}
+}

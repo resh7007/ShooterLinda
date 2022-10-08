@@ -23,8 +23,7 @@ void UCombatComponent::BeginPlay()
 void UCombatComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-	
- 	TraceUnderCrosshairs();
+	 
 }
 
 void UCombatComponent::EquipWeapon(class AWeapon* WeaponToEquip)
@@ -49,15 +48,10 @@ void UCombatComponent::FireButtonPressed(bool bPressed)
 {
 	bFireButtonPressed = bPressed;
 	if(EquippedWeapon == nullptr) return;
-	EquippedWeapon->Fire(HitTarget);
+	EquippedWeapon->Fire(1);
 
 }
-void UCombatComponent::TraceUnderCrosshairs()
-{
  
-	HitTarget = GetOwner()->GetActorLocation();
-	
-}
 void UCombatComponent::DestroyWeapon()
 {
 	if(EquippedWeapon)

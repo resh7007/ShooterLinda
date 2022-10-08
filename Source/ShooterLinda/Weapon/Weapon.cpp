@@ -67,7 +67,7 @@ void AWeapon::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent,AActor* O
 } 
 
 
-void AWeapon::Fire(const FVector& HitTarget)
+void AWeapon::Fire(int shootDir)
 { 
 	if(FireAnimation)
 	{

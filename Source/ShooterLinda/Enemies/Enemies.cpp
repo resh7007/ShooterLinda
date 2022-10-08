@@ -22,8 +22,7 @@ void AEnemies::BeginPlay()
  
 void AEnemies::Tick(float DeltaTime)
 {
-	Super::Tick(DeltaTime);
- 	GetOwnerLocation();
+	Super::Tick(DeltaTime); 
 }
  
 void AEnemies::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -59,8 +58,9 @@ void AEnemies::SetOverlappingWeapon(AWeapon* weapon)
 void AEnemies::Shoot()
 {
 	if(EquippedWeapon)
-	EquippedWeapon->Fire(HitTarget);
- 
+	{ 
+	EquippedWeapon->Fire(-1);
+	}
   	GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AEnemies::Shoot, MaxTime, false);
 
 }
@@ -104,12 +104,7 @@ void AEnemies::EquipBPWeapon(USceneComponent* obj)
 	Shoot();
 
 }
-
-void AEnemies::GetOwnerLocation()
-{
-	HitTarget = GetOwner()->GetActorLocation();  
-	
-}
+ 
 
 
 void AEnemies::PlayHitReactMontage()
