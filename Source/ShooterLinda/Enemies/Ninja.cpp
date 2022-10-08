@@ -18,11 +18,12 @@ void ANinja::BeginPlay()
  void ANinja::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	MoveForward(.02f);
+	MoveForward();
 }
 
-void ANinja::MoveForward(float Value)
+void ANinja::MoveForward()
 {
+	float Value = .02f;
 	const FRotator YawRotation(0.f, Controller->GetControlRotation().Yaw,0.f);
 	const FVector Direction(FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X));
 	AddMovementInput(Direction, Value);

@@ -16,7 +16,7 @@ class SHOOTERLINDA_API ANinja : public AEnemies
 public: 
 	ANinja(); 
 protected:
-	virtual void MoveForward(float Value); 
+	virtual void MoveForward(); 
 	virtual void BeginPlay() override;
 
 public:

@@ -16,11 +16,14 @@ class SHOOTERLINDA_API ASoldier : public AEnemies
 public:
 	ASoldier();
 protected:
-	void MoveRight(float Value); 
+	void MoveRight(); 
 	virtual void BeginPlay() override;
 private:
 	int MoveDirection=-1;  
 	int GetMoveDirection();
+
+	FTimerHandle MoveTimer;   
+
 public:
 	virtual void Tick(float DeltaTime) override;
 

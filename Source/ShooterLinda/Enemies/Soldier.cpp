@@ -13,15 +13,24 @@ ASoldier::ASoldier()
 void ASoldier::BeginPlay()
 {
 	Super::BeginPlay();    
+	GetWorldTimerManager().SetTimer(MoveTimer, this,&ASoldier::MoveRight,.05f,true);
 
 }
  
  void ASoldier::Tick(float DeltaTime)
 {
-	Super::Tick(DeltaTime);
-	MoveRight(GetMoveDirection()*.1f);
+	Super::Tick(DeltaTime); 
 }
 
+
+
+void ASoldier::MoveRight()
+{
+	int dir = GetMoveDirection(); 
+	FVector CurrentLocation = this->GetActorLocation(); 
+  	CurrentLocation.Y -= 10*dir; 
+    SetActorLocation(CurrentLocation); 
+}
 
 int ASoldier::GetMoveDirection()
 {
@@ -33,10 +42,3 @@ int ASoldier::GetMoveDirection()
 	return MoveDirection;
 }
   
-
-void ASoldier::MoveRight(float Value)
-{
-	const FRotator YawRotation(0.f, Controller->GetControlRotation().Yaw,0.f);
-	const FVector Direction(FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y));
-	AddMovementInput(Direction, Value);
-}

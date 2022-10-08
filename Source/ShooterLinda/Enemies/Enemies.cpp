@@ -17,7 +17,6 @@ AEnemies::AEnemies()
 void AEnemies::BeginPlay()
 {
 	Super::BeginPlay();   
-	 
 }
  
 void AEnemies::Tick(float DeltaTime)
