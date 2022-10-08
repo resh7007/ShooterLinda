@@ -86,12 +86,10 @@ void AEnemies::EquipBPWeapon(USceneComponent* obj)
 {
 	TArray<AActor*> ParentedActors;
 	GetAttachedActors(ParentedActors);
-	FString name=ParentedActors[0]->GetName();
 
-	UE_LOG(LogTemp, Warning, TEXT("EquipBPWeapon is called!!!! attached actor count=%s"),*name);
 	EnemyWeapon = Cast<AWeapon>(ParentedActors[0]);
 	if(EnemyWeapon == nullptr) return;
-	UE_LOG(LogTemp, Warning, TEXT("EnemyWeapon is not null!!!!!!"));
+
 	EquippedWeapon = EnemyWeapon;
 	EquippedWeapon->SetWeaponState(EWeaponState::EWS_Equipped); 
 
