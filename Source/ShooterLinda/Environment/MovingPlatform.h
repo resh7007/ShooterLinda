@@ -11,18 +11,17 @@ class SHOOTERLINDA_API AMovingPlatform : public AActor
 {
 	GENERATED_BODY()
 	
-public:	
-	// Sets default values for this actor's properties
+public:	 
 	AMovingPlatform(); 
-protected:
-	// Called when the game starts or when spawned
+protected: 
 	virtual void BeginPlay() override;
 private:
-	void Move();
+	void SpawnHealthBox();
 
 
 
-public:	
-	// Called every frame
+public:	 
 	virtual void Tick(float DeltaTime) override;
+	UPROPERTY(EditAnywhere, Category = "Spawn")
+	TSubclassOf<class AHealthBox> HealthBoxBlueprint;
 };
